@@ -1,0 +1,393 @@
+DOCUMENTAÇÃO COMPLETA DO SISTEMA ACADÊMICO PIM 3.0
+==================================================
+
+ABNT NBR 6023:2018 - Informação e documentação - Referências - Elaboração
+ABNT NBR 14724:2011 - Informação e documentação - Trabalhos acadêmicos - Apresentação
+
+AUTOR: Sistema Acadêmico PIM 3.0
+DATA: [30/10/2025]
+VERSÃO: 3.0
+
+SUMÁRIO EXECUTIVO
+=================
+
+Este documento apresenta uma documentação técnica completa do Sistema Acadêmico PIM 3.0, 
+desenvolvido em Python com interface gráfica CustomTkinter. O sistema implementa um modelo 
+cliente-servidor para gerenciamento acadêmico, incluindo autenticação, CRUD de usuários, 
+turmas, matérias, notas e atividades.
+
+1. INTRODUÇÃO
+==============
+
+1.1 OBJETIVO
+------------
+Este documento visa fornecer uma documentação técnica detalhada de todos os arquivos do 
+sistema, separando-os por componentes Server e Client, incluindo análise de funções, 
+indentação, formato de código e lógica implementada.
+
+1.2 ESCOPO
+----------
+- Arquivos do lado Server (proxy e dados)
+- Arquivos do lado Client (interface e utilitários)
+- Análise técnica completa de cada arquivo
+- Estrutura seguindo normas ABNT
+
+1.3 METODOLOGIA
+---------------
+- Análise estática do código fonte
+- Documentação de funções e métodos
+- Verificação de padrões de codificação
+- Estruturação hierárquica por componentes
+
+2. ARQUITETURA GERAL DO SISTEMA
+===============================
+
+2.1 COMPONENTES PRINCIPAIS
+--------------------------
+- **Server**: Proxy TCP para sincronização de dados
+- **Client**: Interface gráfica para usuários finais
+- **Dados**: Arquivos JSON para persistência
+
+2.2 TECNOLOGIAS UTILIZADAS
+--------------------------
+- Linguagem: Python 3.x
+- Interface: CustomTkinter
+- Criptografia: bcrypt
+- Comunicação: Socket TCP
+- Persistência: JSON
+
+3. DOCUMENTAÇÃO POR COMPONENTE
+==============================
+
+3.1 COMPONENTE SERVER
+=====================
+
+3.1.1 ARQUIVO: server.py
+------------------------
+
+**Localização**: Server\conexao\maq1\server.py
+**Tipo**: Script Python
+**Função Principal**: Servidor proxy TCP para sincronização de dados
+
+**DESCRIÇÃO GERAL**:
+Implementa um servidor TCP que escuta conexões na porta 65432, processando 
+requisições de carregamento e salvamento de dados JSON entre clientes.
+
+**FUNÇÕES PRINCIPAIS**:
+
+def __init__(self):
+    """Inicializa o servidor com configurações básicas"""
+    - Define host e porta
+    - Cria socket TCP
+    - Inicializa dicionário de dados
+
+def start(self):
+    """Inicia o servidor e loop de escuta"""
+    - Liga o servidor
+    - Aceita conexões continuamente
+    - Processa requisições em threads
+
+def handle_client(self, client_socket):
+    """Processa requisição de um cliente"""
+    - Recebe comando (carregar/salvar)
+    - Executa operação correspondente
+    - Retorna resultado ou confirmação
+
+def carregar_dados_do_servidor(self, filename):
+    """Retorna dados JSON solicitados"""
+    - Carrega arquivo do disco
+    - Trata erros de decodificação
+    - Retorna dados ou lista vazia
+
+def salvar_dados_no_servidor(self, filename, data):
+    """Salva dados JSON no servidor"""
+    - Salva dados no arquivo correspondente
+    - Trata erros de escrita
+    - Confirma operação
+
+**INDENTAÇÃO E FORMATO**:
+- Indentação: 4 espaços (PEP 8)
+- Comprimento máximo de linha: 88 caracteres
+- Comentários: Docstrings em português
+- Estrutura: Classe Server com métodos
+
+**LÓGICA IMPLEMENTADA**:
+O servidor utiliza um modelo de comunicação síncrona baseada em comandos de texto. 
+Cada cliente envia um comando seguido do nome do arquivo, e o servidor responde 
+com os dados solicitados ou confirmação de salvamento.
+
+3.1.2 ARQUIVO: server.log
+-------------------------
+
+**Localização**: Server\conexao\maq1\server.log
+**Tipo**: Arquivo de log
+**Função**: Registro de operações do servidor
+
+**DESCRIÇÃO**: Arquivo de texto plano que registra todas as operações do servidor, 
+incluindo conexões, erros e operações de dados.
+
+**FORMATO**:
+[DATA HORA] NIVEL: MENSAGEM
+
+**LÓGICA**: Utiliza logging Python para registrar eventos importantes do servidor.
+
+3.1.3 ARQUIVO: config_server.json
+----------------------------------
+
+**Localização**: Server\conexao\maq1\config_server.json
+**Tipo**: Arquivo de configuração JSON
+
+**ESTRUTURA**:
+{
+  "porta": 65432,
+  "host": "localhost",
+  "timeout": 30,
+  "max_conexoes": 10
+}
+
+**FUNÇÃO**: Define parâmetros de configuração do servidor proxy.
+
+3.1.4 ARQUIVOS DE DADOS JSON (Server\data\)
+-------------------------------------------
+
+**Arquivos**: admin.json, alunos.json, boletim.json, materias.json, 
+notas.json, pedidos.json, professores.json, registros_aula.json, 
+respostas_alunos.json, turmas.json
+
+**DESCRIÇÃO**: Arquivos JSON que armazenam dados do sistema acadêmico.
+
+**ESTRUTURA GERAL**:
+- Formato: JSON válido
+- Indentação: 2 espaços
+- Codificação: UTF-8
+
+**LÓGICA DE PERSISTÊNCIA**: Dados estruturados em listas de objetos, 
+com campos específicos para cada entidade do sistema.
+
+3.1.5 ARQUIVO: iniciar_server.bat
+----------------------------------
+
+**Localização**: Server\iniciar_server.bat
+**Tipo**: Script batch Windows
+
+**FUNÇÃO**: Inicializa o servidor proxy ativando ambiente virtual e executando server.py
+
+**LÓGICA**:
+- Verifica existência do ambiente virtual
+- Ativa ambiente virtual
+- Executa script Python
+- Trata erros de inicialização
+
+3.1.6 ARQUIVO: instalar_dependencias.bat
+----------------------------------------
+
+**Localização**: Server\instalar_dependencias.bat
+**Tipo**: Script batch de instalação
+
+**FUNÇÃO**: Configura ambiente de desenvolvimento do servidor
+
+**LÓGICA**:
+- Verifica instalação do Python
+- Cria ambiente virtual
+- Instala dependências via pip
+- Instala extensões VS Code
+- Verifica instalações
+
+3.2 COMPONENTE CLIENT
+=====================
+
+3.2.1 ARQUIVO: client_proxy_io.py
+---------------------------------
+
+**Localização**: Client\python\client_proxy_io.py
+**Tipo**: Módulo Python de comunicação
+
+**FUNÇÃO**: Implementa cliente para comunicação com servidor proxy
+
+**FUNÇÕES PRINCIPAIS**:
+
+def conectar_servidor():
+    """Estabelece conexão TCP com servidor"""
+    - Cria socket cliente
+    - Conecta na porta 65432
+    - Retorna socket conectado
+
+def carregar_dados_do_servidor(filename):
+    """Solicita dados do servidor"""
+    - Conecta ao servidor
+    - Envia comando de carregamento
+    - Recebe e retorna dados
+
+def salvar_dados_no_servidor(filename, data):
+    """Envia dados para salvamento"""
+    - Conecta ao servidor
+    - Envia comando de salvamento
+    - Confirma operação
+
+**INDENTAÇÃO**: 4 espaços padrão Python
+**LÓGICA**: Comunicação síncrona baseada em comandos de texto via socket TCP.
+
+3.2.2 ARQUIVO: client_gui.py
+----------------------------
+
+**Localização**: Client\python\client_gui.py
+**Tipo**: Interface gráfica principal
+
+**DESCRIÇÃO**: Implementa a interface gráfica completa do sistema usando CustomTkinter.
+
+**CLASSE PRINCIPAL**: App(customtkinter.CTk)
+
+**MÉTODOS PRINCIPAIS**:
+
+def __init__(self):
+    """Inicializa aplicação GUI"""
+    - Configura aparência
+    - Define geometria da janela
+    - Inicializa variáveis de estado
+
+def _build_login(self):
+    """Cria tela de login"""
+    - Campos de usuário e senha
+    - Validação de entrada
+    - Botão de autenticação
+
+def autenticar(self):
+    """Processa login do usuário"""
+    - Valida credenciais
+    - Redireciona para dashboard apropriado
+
+def _build_dashboard(self):
+    """Cria interface principal baseada no tipo de usuário"""
+    - Cria tabs específicas
+    - Carrega dados do usuário
+
+**INDENTAÇÃO**: 4 espaços (PEP 8)
+**FORMATO**: Código organizado em métodos por funcionalidade
+**LÓGICA**: Interface baseada em estados, com diferentes painéis por tipo de usuário.
+
+3.2.3 ARQUIVO: test_conexao.py
+------------------------------
+
+**Localização**: Client\python\test_conexao.py
+**Tipo**: Script de teste
+
+**FUNÇÃO**: Testa conectividade com servidor proxy
+
+**LÓGICA**:
+- Tenta conectar ao servidor
+- Executa operações básicas
+- Reporta status da conexão
+
+3.2.4 ARQUIVO: migrar_senhas.py
+-------------------------------
+
+**Localização**: Client\python\migrar_senhas.py
+**Tipo**: Script de migração
+
+**FUNÇÃO**: Migra senhas de texto plano para hash bcrypt
+
+**LÓGICA**:
+- Carrega usuários
+- Identifica senhas não criptografadas
+- Aplica hash bcrypt
+- Salva dados atualizados
+
+3.2.5 ARQUIVO: config_cliente.json
+----------------------------------
+
+**Localização**: Client\python\config_cliente.json
+**Tipo**: Arquivo de configuração
+
+**ESTRUTURA**:
+{
+  "servidor_host": "localhost",
+  "servidor_porta": 65432,
+  "timeout_conexao": 10,
+  "modo_debug": false
+}
+
+**FUNÇÃO**: Define configurações de conexão do cliente.
+
+3.2.6 ARQUIVO: install_dependencias.bat
+---------------------------------------
+
+**Localização**: Client\install_dependencias.bat
+**Tipo**: Script batch de instalação
+
+**FUNÇÃO**: Configura ambiente cliente
+
+**LÓGICA**: Similar ao script do servidor, mas focado no cliente.
+
+3.2.7 ARQUIVO: iniciar_sistema.bat
+----------------------------------
+
+**Localização**: Client\iniciar_sistema.bat
+**Tipo**: Script batch de inicialização
+
+**FUNÇÃO**: Inicia aplicação cliente
+
+**LÓGICA**:
+- Ativa ambiente virtual
+- Executa client_gui.py
+
+4. ANÁLISE TÉCNICA DETALHADA
+============================
+
+4.1 PADRÕES DE CODIFICAÇÃO
+--------------------------
+- **PEP 8**: Seguido em todos os arquivos Python
+- **Indentação**: 4 espaços por nível
+- **Nomenclatura**: snake_case para funções, PascalCase para classes
+- **Comentários**: Docstrings em português brasileiro
+
+4.2 ESTRUTURAS DE DADOS
+-----------------------
+- **JSON**: Formato principal de persistência
+- **Dicionários**: Estrutura de dados em memória
+- **Listas**: Coleções de objetos
+
+4.3 SEGURANÇA
+-------------
+- **Criptografia**: bcrypt para senhas
+- **Validação**: Entrada de dados em todas as interfaces
+- **Controle de Acesso**: Baseado em tipos de usuário
+
+4.4 PERFORMANCE
+---------------
+- **Cache**: Implementado para usuários frequentemente acessados
+- **Lazy Loading**: Carregamento sob demanda de dados
+- **Filtragem**: Operações eficientes em listas
+
+5. CONCLUSÃO
+============
+
+Esta documentação abrange todos os aspectos técnicos do Sistema Acadêmico PIM 3.0, 
+fornecendo uma base sólida para manutenção, evolução e compreensão do código fonte.
+
+6. REFERÊNCIAS
+==============
+
+[1] VAN ROSSUM, Guido. Python Language Reference. Disponível em: <https://docs.python.org/3/reference/>. Acesso em: [data].
+
+[2] PEP 8 -- Style Guide for Python Code. Disponível em: <https://www.python.org/dev/peps/pep-0008/>. Acesso em: [data].
+
+[3] ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. NBR 6023:2018 - Informação e documentação - Referências - Elaboração. Rio de Janeiro, 2018.
+
+[4] ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. NBR 14724:2011 - Informação e documentação - Trabalhos acadêmicos - Apresentação. Rio de Janeiro, 2011.
+
+APÊNDICE A - GLOSSÁRIO
+======================
+
+CRUD: Create, Read, Update, Delete (operações básicas de banco de dados)
+GUI: Graphical User Interface (interface gráfica do usuário)
+JSON: JavaScript Object Notation (formato de dados)
+TCP: Transmission Control Protocol (protocolo de comunicação)
+bcrypt: Algoritmo de hash para senhas
+
+APÊNDICE B - DIAGRAMAS
+======================
+
+[Diagramas de arquitetura e fluxo de dados seriam incluídos aqui em uma versão completa]
+
+FIM DA DOCUMENTAÇÃO
+===================

@@ -1,0 +1,49 @@
+2025-10-21 19:46:42,978 - INFO - 📁 Diretório de dados configurado: C:\Users\Assupero\Downloads\PIM BASE 2.4 (1)\PIM BASE 2.4\conexao\DATA
+2025-10-21 19:46:42,979 - INFO - 🔄 Worker thread iniciado
+2025-10-21 19:46:42,992 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.35:8080
+2025-10-21 19:46:42,992 - INFO - [33mPress CTRL+C to quit[0m
+2025-10-21 19:49:23,595 - INFO - 📁 Diretório de dados configurado: C:\Users\Assupero\Downloads\PIM BASE 2.4 (1)\PIM BASE 2.4\conexao\DATA
+2025-10-21 19:49:23,596 - INFO - 🔄 Worker thread iniciado
+2025-10-21 19:49:23,609 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.35:8080
+2025-10-21 19:49:23,609 - INFO - [33mPress CTRL+C to quit[0m
+2025-10-21 20:36:16,255 - INFO - 📁 Diretório de dados configurado: c:\Users\Assupero\Desktop\Nova pasta\conexao\maq1\DATA
+2025-10-21 20:36:16,256 - INFO - 🔄 Worker thread iniciado
+2025-10-21 20:36:38,117 - INFO - 📁 Diretório de dados configurado: C:\Users\Assupero\Desktop\Nova pasta\conexao\maq1\DATA
+2025-10-21 20:36:38,118 - INFO - 🔄 Worker thread iniciado
+2025-10-21 20:36:38,131 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.35:8080
+2025-10-21 20:36:38,131 - INFO - [33mPress CTRL+C to quit[0m
+2025-10-21 20:40:07,211 - INFO - [DIR] Diretório de dados configurado: C:\Users\Assupero\Desktop\Nova pasta\conexao\maq1\DATA
+2025-10-21 20:40:07,212 - INFO - [WORKER] Worker thread iniciado
+2025-10-21 20:40:07,224 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.35:8080
+2025-10-21 20:40:07,224 - INFO - [33mPress CTRL+C to quit[0m
+2025-10-21 20:40:16,372 - INFO - [DIR] Diretório de dados configurado: C:\Users\Assupero\Desktop\Nova pasta\conexao\maq1\DATA
+2025-10-21 20:40:16,373 - INFO - [WORKER] Worker thread iniciado
+2025-10-21 20:40:16,385 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.35:8080
+2025-10-21 20:40:16,385 - INFO - [33mPress CTRL+C to quit[0m
+2025-10-21 21:04:32,658 - INFO - [DIR] Diretório de dados configurado: C:\Users\Assupero\Desktop\Nova pasta\conexao\maq1\DATA
+2025-10-21 21:04:32,659 - INFO - [WORKER] Worker thread iniciado
+2025-10-21 21:04:32,672 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.35:8080
+2025-10-21 21:04:32,673 - INFO - [33mPress CTRL+C to quit[0m
+2025-10-21 21:12:40,367 - INFO - 192.168.0.35 - - [21/Oct/2025 21:12:40] "GET /ping HTTP/1.1" 200 -
+2025-10-21 21:12:48,503 - INFO - 192.168.0.35 - - [21/Oct/2025 21:12:48] "GET /ping HTTP/1.1" 200 -
+2025-10-21 21:13:22,500 - INFO - 192.168.0.35 - - [21/Oct/2025 21:13:22] "[33mGET /api/api/read/alunos.json HTTP/1.1[0m" 404 -
+2025-10-21 21:13:35,574 - INFO - 192.168.0.35 - - [21/Oct/2025 21:13:35] "[33mGET /api/api/read/professores.json HTTP/1.1[0m" 404 -
+2025-10-21 21:13:36,442 - INFO - 192.168.0.35 - - [21/Oct/2025 21:13:36] "[33mGET /api/api/read/admin.json HTTP/1.1[0m" 404 -

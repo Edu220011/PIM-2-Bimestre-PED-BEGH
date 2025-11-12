@@ -1,0 +1,29 @@
+[
+  {
+    "turma_id": 1,
+    "alunos": [
+      {
+        "ra": "00000001",
+        "usuario": "aluno_exemplo_1",
+        "data_nascimento": "2008-05-10",
+        "notas": {
+          "1_bimestre": null,
+          "2_bimestre": null,
+          "3_bimestre": null,
+          "4_bimestre": null
+        }
+      },
+      {
+        "ra": "00000002",
+        "usuario": "aluno_exemplo_2",
+        "data_nascimento": "2008-07-22",
+        "notas": {
+          "1_bimestre": 8.5,
+          "2_bimestre": 9.0,
+          "3_bimestre": null,
+          "4_bimestre": null
+        }
+      }
+    ]
+  }
+]

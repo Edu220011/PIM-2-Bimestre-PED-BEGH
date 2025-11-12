@@ -1,0 +1,94 @@
+[
+  {
+    "aluno_ra": "00000002",
+    "materia_id": 101,
+    "tipo_nota": "NP1",
+    "valor": 5.0,
+    "professor_login": "raul"
+  },
+  {
+    "aluno_ra": "00000002",
+    "materia_id": 101,
+    "tipo_nota": "NP2",
+    "valor": 5.8,
+    "professor_login": "raul"
+  },
+  {
+    "aluno_ra": "00000002",
+    "materia_id": 101,
+    "tipo_nota": "B1_NP1",
+    "valor": 2.0,
+    "professor_login": "raul"
+  },
+  {
+    "aluno_ra": "00000002",
+    "materia_id": 101,
+    "tipo_nota": "B1_NP2",
+    "valor": 5.2,
+    "professor_login": "raul"
+  },
+  {
+    "aluno_ra": 10000001,
+    "materia_id": 1,
+    "tipo_nota": "B1_NP1",
+    "valor": 3.0,
+    "professor": "raul",
+    "data_lancamento": "13/10/2025 19:38:44"
+  },
+  {
+    "aluno_ra": 10000001,
+    "materia_id": 1,
+    "tipo_nota": "B1_NP2",
+    "valor": 1.0,
+    "professor": "raul",
+    "data_lancamento": "13/10/2025 19:38:44"
+  },
+  {
+    "aluno_ra": 10000001,
+    "materia_id": 1,
+    "tipo_nota": "B2_NP1",
+    "valor": 3.0,
+    "professor": "raul",
+    "data_lancamento": "13/10/2025 19:38:44"
+  },
+  {
+    "aluno_ra": 10000001,
+    "materia_id": 1,
+    "tipo_nota": "B2_NP2",
+    "valor": 5.0,
+    "professor": "raul",
+    "data_lancamento": "13/10/2025 19:38:44"
+  },
+  {
+    "aluno_ra": 10000001,
+    "materia_id": 1,
+    "tipo_nota": "B3_NP1",
+    "valor": 5.0,
+    "professor": "raul",
+    "data_lancamento": "13/10/2025 19:38:44"
+  },
+  {
+    "aluno_ra": 10000001,
+    "materia_id": 1,
+    "tipo_nota": "B3_NP2",
+    "valor": 5.0,
+    "professor": "raul",
+    "data_lancamento": "13/10/2025 19:38:44"
+  },
+  {
+    "aluno_ra": 10000001,
+    "materia_id": 1,
+    "tipo_nota": "B4_NP1",
+    "valor": 8.0,
+    "professor": "raul",
+    "data_lancamento": "13/10/2025 19:38:44"
+  },
+  {
+    "aluno_ra": 10000001,
+    "materia_id": 1,
+    "tipo_nota": "B4_NP2",
+    "valor": 9.0,
+    "professor": "raul",
+    "data_lancamento": "13/10/2025 19:38:44"
+  }
+]
