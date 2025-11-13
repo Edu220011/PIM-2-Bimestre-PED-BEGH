@@ -1,0 +1,1093 @@
+================================================================================
+                    MANUAL DE UTILIZAÇÃO - CLIENTE (CLIENT)
+                            SISTEMA ACADÊMICO PED-BEGH
+================================================================================
+
+Data: 12 de novembro de 2025
+Versão: 3.0
+Localização: /Client
+
+================================================================================
+1. INTRODUÇÃO
+================================================================================
+
+O Cliente é a interface gráfica que permite aos usuários:
+- Fazer login com usuário e senha
+- Acessar funcionalidades específicas de seu tipo (Admin, Professor ou Aluno)
+- Visualizar e gerenciar dados acadêmicos
+- Sincronizar dados com o servidor
+
+Localização: /Client/python/
+
+IMPORTANTE: O servidor deve estar rodando para que o cliente funcione!
+
+
+================================================================================
+2. PRÉ-REQUISITOS E INSTALAÇÃO
+================================================================================
+
+2.1 REQUISITOS DO SISTEMA
+--------------------------
+✓ Python 3.8 ou superior instalado
+✓ Acesso ao terminal/PowerShell
+✓ Conexão com rede (para conectar ao servidor)
+✓ Servidor rodando em uma máquina da rede
+✓ Ip do servidor conhecido
+
+
+2.2 INSTALAÇÃO AUTOMÁTICA
+---------------------------
+1. Navegue até a pasta /Client
+2. Clique duas vezes em "install_dependencias.bat"
+3. Aguarde a conclusão da instalação
+4. O script criará automaticamente:
+   - Ambiente virtual Python (venv)
+   - Instalará dependências (customtkinter, bcrypt)
+   - Configurará extensões VS Code
+
+2.3 INSTALAÇÃO MANUAL
+---------------------
+Caso a instalação automática falhe:
+
+a) Abrir PowerShell na pasta /Client
+b) Executar os seguintes comandos:
+
+   python -m venv venv
+   .\venv\Scripts\Activate.ps1
+   pip install customtkinter bcrypt
+
+c) Aguarde a conclusão
+
+
+================================================================================
+3. CONFIGURAÇÃO DO CLIENTE
+================================================================================
+
+3.1 CONFIGURANDO CONEXÃO COM SERVIDOR
+--------------------------------------
+Antes de iniciar o cliente, configure a conexão:
+
+1. Abrir arquivo: /Client/python/config_cliente.json
+2. Editar com Bloco de Notas ou VS Code
+
+Exemplo padrão (servidor na mesma máquina):
+{
+  "servidor_host": "127.0.0.1",      (ou localhost)
+  "servidor_porta": 65432,
+  "timeout_conexao": 10,
+  "modo_debug": false
+}
+
+Exemplo para rede (servidor em outra máquina):
+{
+  "servidor_host": "192.168.1.100",  (IP do servidor)
+  "servidor_porta": 65432,
+  "timeout_conexao": 10,
+  "modo_debug": false
+}
+
+3.2 ENCONTRANDO IP DO SERVIDOR
+------------------------------
+Para descobrir o IP do servidor:
+
+1. No servidor, abrir PowerShell
+2. Digitar: ipconfig
+3. Procurar por "IPv4 Address"
+4. Exemplo: 192.168.1.100
+5. Usar este IP em "servidor_host"
+
+3.3 TESTANDO CONEXÃO
+--------------------
+Para testar a conexão com servidor:
+
+1. No PowerShell, ir para: /Client/python
+2. Executar: python test_conexao.py
+3. Se conectar, verá mensagens de sucesso
+4. Se não conectar, verificar:
+   - Servidor está rodando?
+   - IP está correto?
+   - Porta 65432 está liberada?
+
+
+================================================================================
+4. INICIANDO O CLIENTE
+================================================================================
+
+4.1 INICIALIZAÇÃO AUTOMÁTICA
+-----------------------------
+1. Na pasta /Client, clique duas vezes em "iniciar_sistema.bat"
+2. Janela da aplicação abrirá automaticamente
+3. Você verá tela de login
+
+
+4.2 INICIALIZAÇÃO MANUAL
+------------------------
+1. Abrir PowerShell na pasta /Client/python
+2. Executar:
+
+   python client_gui.py
+
+3. Aguarde a interface gráfica abrir
+
+
+4.3 PRIMEIRO ACESSO
+-------------------
+Usuário padrão do sistema (ADMIN):
+- Usuário: admin
+- Senha: admin123
+
+⚠️  IMPORTANTE: Trocar senha do admin na primeira utilização!
+
+
+================================================================================
+5. INTERFACE DE LOGIN
+================================================================================
+
+5.1 TELA DE LOGIN
+-----------------
+Ao iniciar, você verá:
+
+┌─────────────────────────────┐
+│ SISTEMA ACADÊMICO PED-BEGH │
+│                             │
+│ Usuário: [____________]    │
+│ Senha:   [____________]    │
+│                             │
+│    [Entrar]  [Sair]        │
+└─────────────────────────────┘
+
+5.2 FAZENDO LOGIN
+-----------------
+1. Digite seu usuário (login)
+2. Digite sua senha
+3. Clique em "Entrar" (ou pressione Enter)
+
+Opções:
+- Fazer login com RA (alunos): alguns sistemas permitem usar RA ao invés de usuário
+- Esqueceu senha? Contacte o admin
+
+5.3 MENSAGENS DE ERRO
+---------------------
+- "Credenciais inválidas" → Usuário ou senha errados
+- "Erro ao conectar servidor" → Servidor não está rodando
+- "Timeout de conexão" → Servidor demorando para responder
+
+Soluções:
+1. Verificar se servidor está rodando
+2. Verificar se está conectado à rede
+3. Verificar configuração em config_cliente.json
+4. Executar test_conexao.py
+
+
+================================================================================
+6. PAINEL DO ADMINISTRADOR
+================================================================================
+
+O administrador tem acesso a TODAS as funcionalidades do sistema.
+
+┌─────────────────────────────────────────────────────────┐
+│ Bem-vindo, João Silva (admin)                           │
+│                                                         │
+│  [Admin] [Configurações] [Relatórios] [Sair da Conta] │
+│                                                         │
+│  TAB ADMIN:                                             │
+│  ┌──────────────────────────────────────────────────┐  │
+│  │ • Gerenciar Usuários (Admin, Prof, Aluno)       │  │
+│  │ • Gerenciar Turmas                              │  │
+│  │ • Gerenciar Matérias/Disciplinas                │  │
+│  │ • Visualizar Relatórios                         │  │
+│  │ • Importar/Exportar Dados                       │  │
+│  │ • Configurações do Sistema                      │  │
+│  └──────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────┘
+
+6.1 GERENCIAR USUÁRIOS (ADMIN)
+------------------------------
+
+ADICIONAR NOVO USUÁRIO:
+1. Clique no botão "Adicionar Usuário"
+2. Selecione tipo de usuário:
+   □ Admin        (acesso total ao sistema)
+   □ Professor    (gerencia turmas, notas, atividades)
+   □ Aluno        (visualiza notas e atividades)
+
+3. Preencha os campos:
+   - Nome completo
+   - Usuário (login único)
+   - Senha (mínimo 8 caracteres, letras e números)
+   - Email
+
+4. Clique "Salvar"
+5. Novo usuário criado com sucesso!
+
+EDITAR USUÁRIO:
+1. Liste todos os usuários (tabela aparece automaticamente)
+2. Selecione usuário na tabela
+3. Clique "Editar"
+4. Modifique dados necessários
+5. Clique "Atualizar"
+
+DELETAR USUÁRIO:
+1. Liste todos os usuários
+2. Selecione usuário na tabela
+3. Clique "Deletar"
+4. Confirme exclusão
+5. Usuário removido (não pode ser recuperado!)
+
+RESETAR SENHA:
+1. Selecione usuário
+2. Clique "Resetar Senha"
+3. Nova senha temporária será gerada
+4. Usuário receberá senha temporária
+5. Usuário pode trocar na primeira utilização
+
+
+6.2 GERENCIAR TURMAS
+--------------------
+
+CRIAR NOVA TURMA:
+1. Clique "Adicionar Turma"
+2. Preencha:
+   - Série (1º, 2º, 3º ano, etc)
+   - Turma (A, B, C, etc)
+   - Período (Manhã, Tarde, Noite)
+   - Professor responsável
+
+3. Clique "Salvar"
+
+ADICIONAR ALUNOS À TURMA:
+1. Selecione turma na lista
+2. Clique "Gerenciar Alunos"
+3. Selecione alunos disponíveis
+4. Clique "Adicionar"
+5. Alunos agora recebem notas nesta turma
+
+EDITAR TURMA:
+1. Selecione turma
+2. Clique "Editar"
+3. Modifique dados
+4. Clique "Atualizar"
+
+DELETAR TURMA:
+⚠️  CUIDADO: Ao deletar turma, TODAS as notas da turma são perdidas!
+1. Selecione turma
+2. Clique "Deletar"
+3. Confirme (se tem certeza)
+4. Turma removida
+
+
+6.3 GERENCIAR MATÉRIAS/DISCIPLINAS
+----------------------------------
+
+CRIAR NOVA MATÉRIA:
+1. Clique "Adicionar Matéria"
+2. Preencha:
+   - Nome (Português, Matemática, etc)
+   - Código (MAT, POR, FIS, etc)
+   - Turma
+   - Professor
+
+3. Clique "Salvar"
+
+EDITAR MATÉRIA:
+1. Selecione matéria na lista
+2. Clique "Editar"
+3. Modifique dados
+4. Clique "Atualizar"
+
+DELETAR MATÉRIA:
+⚠️  CUIDADO: Ao deletar, TODAS as notas da matéria são perdidas!
+1. Selecione matéria
+2. Clique "Deletar"
+3. Confirme exclusão
+4. Matéria removida
+
+
+6.4 VISUALIZAR RELATÓRIOS (ADMIN)
+---------------------------------
+
+RELATÓRIO DE ALUNOS:
+1. Clique "Relatórios" → "Alunos"
+2. Escolha filtros:
+   - Por turma
+   - Por status (ativo/inativo)
+   - Período de criação
+
+3. Clique "Gerar Relatório"
+4. PDF será baixado com dados
+
+RELATÓRIO DE DESEMPENHO:
+1. Clique "Relatórios" → "Desempenho"
+2. Escolha:
+   - Turma
+   - Bimestre
+   - Matéria (opcional)
+
+3. Clique "Gerar Relatório"
+4. Visualiza gráficos de média por aluno
+
+RELATÓRIO DE FREQUÊNCIA:
+1. Clique "Relatórios" → "Frequência"
+2. Escolha:
+   - Turma
+   - Período
+
+3. Clique "Gerar Relatório"
+4. Visualiza presença/ausência
+
+
+6.5 IMPORTAR/EXPORTAR DADOS
+---------------------------
+
+EXPORTAR DADOS:
+1. Clique "Ferramenta" → "Exportar Dados"
+2. Escolha quais dados exportar:
+   □ Usuários
+   □ Turmas
+   □ Matérias
+   □ Notas
+   □ Frequência
+
+3. Escolha formato:
+   ○ JSON (formato nativo)
+   ○ CSV (compatível com Excel)
+   ○ PDF (para impressão)
+
+4. Clique "Exportar"
+5. Arquivo será salvo em Downloads
+
+IMPORTAR DADOS:
+1. Clique "Ferramenta" → "Importar Dados"
+2. Selecione arquivo para importar (.json ou .csv)
+3. Escolha ação:
+   ○ Sobrescrever dados existentes
+   ○ Mesclar com dados existentes
+
+4. Clique "Importar"
+5. Sistema validará dados
+6. Se tudo ok, dados importados com sucesso
+
+
+6.6 CONFIGURAÇÕES DO SISTEMA
+----------------------------
+
+1. Clique em "Configurações"
+2. Opções disponíveis:
+
+   TEMA:
+   - Claro / Escuro / Automático
+
+   CONEXÃO:
+   - IP do servidor
+   - Porta
+   - Timeout
+
+   SEGURANÇA:
+   - Requer autenticação dupla
+   - Expiração de senha (dias)
+   - Tentativas de login antes de bloquear
+
+   NOTIFICAÇÕES:
+   - Email ao criar novo usuário
+   - Email ao resetar senha
+   - Alertas de segurança
+
+3. Modifique conforme necessário
+4. Clique "Salvar"
+
+
+================================================================================
+7. PAINEL DO PROFESSOR
+================================================================================
+
+O professor gerencia a turma, lança notas e atividades.
+
+┌─────────────────────────────────────────────────────────┐
+│ Bem-vindo, Maria Santos (professor)                     │
+│                                                         │
+│  [Professor] [Sair da Conta]                           │
+│                                                         │
+│  TAB PROFESSOR:                                         │
+│  ┌──────────────────────────────────────────────────┐  │
+│  │ • Gerenciar Turmas                              │  │
+│  │ • Lançar Notas (NP1, NP2)                       │  │
+│  │ • Gerenciar Atividades                          │  │
+│  │ • Registrar Frequência                          │  │
+│  │ • Visualizar Desempenho da Turma               │  │
+│  │ • Gerar Relatórios                              │  │
+│  └──────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────┘
+
+
+7.1 GERENCIAR TURMAS (PROFESSOR)
+--------------------------------
+
+VISUALIZAR MINHAS TURMAS:
+1. Na aba "Turmas", você verá lista de turmas que ministra
+2. Cada turma mostra:
+   - Série e turma
+   - Quantidade de alunos
+   - Matérias
+
+SELECIONAR TURMA PARA TRABALHAR:
+1. Clique na turma desejada
+2. Sistema carrega dados da turma
+3. Agora você pode ver alunos, lançar notas, etc
+
+
+7.2 LANÇAR NOTAS
+----------------
+
+SISTEMA DE AVALIAÇÃO:
+- NP1 (Nota Prova 1) = primeira avaliação do bimestre
+- NP2 (Nota Prova 2) = segunda avaliação do bimestre
+- Média = (NP1 + NP2) / 2
+- Escala: 0.0 a 10.0
+
+LANÇAR NOTAS:
+1. Abra aba "Lançar Notas"
+2. Selecione turma
+3. Selecione matéria
+4. Selecione bimestre (1º, 2º, 3º, 4º)
+5. Escolha tipo de nota:
+   ○ NP1 (Prova 1)
+   ○ NP2 (Prova 2)
+
+6. Tabela com todos os alunos aparecerá
+7. Clique duas vezes no campo do aluno para editar
+8. Digite a nota (0 a 10, pode usar casas decimais: 7.5)
+9. Pressione Enter para salvar
+10. Nota será sincronizada com servidor
+
+EDITAR NOTAS:
+1. Repita processo acima
+2. Digite nova nota
+3. Nota antiga será sobrescrita
+
+DELETAR NOTA:
+1. Selecione nota na tabela
+2. Clique "Deletar"
+3. Nota será removida
+4. Aluno fica sem nota naquele item
+
+
+7.3 GERENCIAR ATIVIDADES
+------------------------
+
+CRIAR ATIVIDADE:
+1. Abra aba "Atividades"
+2. Clique "Nova Atividade"
+3. Preencha:
+   - Título (ex: "Lição de Casa - Cap 5")
+   - Descrição detalhada
+   - Turma
+   - Matéria
+   - Data de entrega
+   - Valor (quantos pontos vale 0-10)
+   - Tipo (Trabalho, Tarefa, Projeto, Teste)
+
+4. Anexe arquivo (opcional):
+   - Clique "Anexar"
+   - Selecione PDF ou documento
+   - Será enviado aos alunos
+
+5. Clique "Publicar"
+6. Atividade enviada para todos alunos da turma
+
+VISUALIZAR ENTREGAS:
+1. Selecione atividade na lista
+2. Clique "Ver Entregas"
+3. Tabela mostra:
+   - Aluno
+   - Status (Entregue, Atrasado, Não entregue)
+   - Data/hora entrega
+   - Arquivo enviado
+
+CORRIGIR E AVALIAR:
+1. Selecione atividade
+2. Clique em aluno específico
+3. Sistema mostra:
+   - Arquivo entregue (pode baixar)
+   - Comentário do aluno
+
+4. Escreva comentário do professor
+5. Clique "Dar Nota"
+6. Digite nota de 0 a 10
+7. Clique "Salvar e Notificar"
+8. Aluno recebe notificação com resultado
+
+FECHAR ATIVIDADE:
+1. Após data de entrega e todas corrigidas
+2. Selecione atividade
+3. Clique "Fechar"
+4. Nenhum aluno conseguirá mais entregar
+5. Resultado final fica registrado
+
+
+7.4 REGISTRAR FREQUÊNCIA
+------------------------
+
+SISTEMA DE FREQUÊNCIA:
+- Presença: Aluno estava presente
+- Ausência: Aluno faltou sem justificativa
+- Falta Justificada: Aluno faltou com justificativa (atestado, etc)
+
+REGISTRAR FREQUÊNCIA:
+1. Abra aba "Frequência"
+2. Selecione turma
+3. Selecione data (aula)
+4. Selecione matéria
+
+5. Tabela com alunos aparecerá:
+   ┌──────────────────┬───┐
+   │ Aluno            │   │
+   ├──────────────────┼───┤
+   │ João Silva       │ P │
+   │ Maria Santos     │ F │
+   │ Pedro Costa      │ J │
+   └──────────────────┴───┘
+
+   P = Presença
+   F = Falta
+   J = Falta Justificada
+
+6. Clique no status do aluno para mudar
+7. Selecione novo status
+8. Pressione Enter
+9. Frequência será salva
+
+JUSTIFICAR FALTA:
+1. Clique na falta (F)
+2. Selecione "Falta Justificada"
+3. Upload arquivo de justificativa (atestado):
+   - Foto do atestado
+   - PDF
+
+4. Clique "Justificar"
+5. Falta passa para "J"
+
+RELATÓRIO DE FREQUÊNCIA:
+1. Clique "Gerar Relatório"
+2. Escolha período
+3. Sistema mostra:
+   - Total de presenças por aluno
+   - Total de faltas
+   - Percentual de frequência
+
+
+7.5 VISUALIZAR DESEMPENHO DA TURMA
+---------------------------------
+
+GRÁFICOS DE DESEMPENHO:
+1. Abra aba "Desempenho"
+2. Escolha:
+   - Matéria
+   - Bimestre
+
+3. Sistema mostra:
+
+   GRÁFICO 1: Distribuição de notas
+   - Quantos alunos tiraram 9-10
+   - Quantos tiraram 7-8
+   - Quantos tiraram 5-6
+   - Quantos ficaram <5
+
+   GRÁFICO 2: Média por aluno
+   - Mostra ranking de melhor para pior desempenho
+   - Alunos em verde (≥7) = aprovados
+   - Alunos em amarelo (5-6) = recuperação
+   - Alunos em vermelho (<5) = reprovados
+
+ESTATÍSTICAS:
+- Média geral da turma
+- Melhor aluno
+- Pior aluno
+- Moda (nota mais frequente)
+- Mediana
+
+
+7.6 GERAR RELATÓRIOS (PROFESSOR)
+--------------------------------
+
+RELATÓRIO DE DESEMPENHO:
+1. Clique "Relatório"
+2. Escolha:
+   - Turma
+   - Período (Bimestre ou trimestre)
+
+3. Clique "Gerar"
+4. Relatório em PDF com:
+   - Todas as notas
+   - Médias por aluno
+   - Gráficos
+   - Análise comparativa
+
+RELATÓRIO DE FREQUÊNCIA:
+1. Clique "Relatório" → "Frequência"
+2. Escolha período
+3. Clique "Gerar"
+4. PDF com presença/ausência de cada aluno
+
+RELATÓRIO DE ATIVIDADES:
+1. Clique "Relatório" → "Atividades"
+2. Período (últimos 30 dias, mês, bimestre, etc)
+3. Clique "Gerar"
+4. PDF mostrando:
+   - Todas atividades lançadas
+   - Taxa de entrega
+   - Notas médias das atividades
+
+
+================================================================================
+8. PAINEL DO ALUNO
+================================================================================
+
+O aluno visualiza suas notas, atividades e boletim.
+
+┌─────────────────────────────────────────────────────────┐
+│ Bem-vindo, João Silva (aluno)                           │
+│                                                         │
+│  [Aluno] [Segurança] [Sair da Conta]                   │
+│                                                         │
+│  TAB ALUNO:                                             │
+│  ┌──────────────────────────────────────────────────┐  │
+│  │ • Minhas Notas                                   │  │
+│  │ • Boletim Bimestral                              │  │
+│  │ • Minhas Atividades                              │  │
+│  │ • Frequência                                     │  │
+│  │ • Desempenho e Estatísticas                      │  │
+│  └──────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────┘
+
+
+8.1 VISUALIZAR MINHAS NOTAS
+--------------------------
+
+A aba "Minhas Notas" mostra tabela com todas as suas notas:
+
+Colunas:
+- Matéria (nome da disciplina)
+- B1 NP1, B1 NP2, B1 Média (Bimestre 1)
+- B2 NP1, B2 NP2, B2 Média (Bimestre 2)
+- B3 NP1, B3 NP2, B3 Média (Bimestre 3)
+- B4 NP1, B4 NP2, B4 Média (Bimestre 4)
+- Média Final (média de todos 4 bimestres)
+
+Significados:
+- N/L = Nota Lançada (ainda não foi lançada)
+- N/A = Não Avaliado
+- 7.5 = Nota normal (0 a 10)
+
+CORES:
+- Verde = Média ≥ 7.0 (Aprovado)
+- Amarelo = Média 5.0-6.9 (Recuperação)
+- Vermelho = Média < 5.0 (Reprovado)
+
+
+8.2 BOLETIM BIMESTRAL
+---------------------
+
+Visualiza boletim formatado e oficial de cada bimestre.
+
+ESTRUTURA DO BOLETIM:
+┌────────────────────────────────┐
+│ BOLETIM ESCOLAR BIMESTRAL      │
+│ Aluno: João Silva              │
+│ RA: 202401001                  │
+│ Turma: 2º Ano A                │
+├────────────────────────────────┤
+│ BIMESTRE 1                     │
+│ Matéria    │ NP1 │ NP2 │ Média│
+│────────────┼─────┼─────┼──────│
+│ Matemática │ 7.0 │ 8.5 │ 7.75 │
+│ Português  │ 8.0 │ 7.0 │ 7.50 │
+│ História   │ 9.0 │ 8.5 │ 8.75 │
+│────────────┼─────┼─────┼──────│
+│ Média      │     │     │ 7.97 │
+│ Situação   │  ✅ APROVADO  │
+└────────────────────────────────┘
+
+RESUMO FINAL:
+Ao final do boletim, mostra:
+- Média geral de todos bimestres
+- Situação final (Aprovado, Recuperação, Reprovado)
+
+
+8.3 MINHAS ATIVIDADES
+---------------------
+
+Lista todas atividades lançadas pelos professores.
+
+INFORMAÇÕES POR ATIVIDADE:
+- Título
+- Professor
+- Matéria
+- Data de entrega
+- Status (Não iniciada, Em progresso, Entregue, Atrasada, Fechada)
+- Nota (se já corrigida)
+
+ENVIAR ATIVIDADE:
+1. Clique em atividade
+2. Clique "Entregar"
+3. Caixa para fazer upload aparece
+4. Escolha arquivo (PDF, Word, Imagem, etc)
+5. Opcionalmente escreva comentário
+6. Clique "Enviar"
+7. Arquivo será enviado para professor
+
+VISUALIZAR COMENTÁRIO DO PROFESSOR:
+1. Selecione atividade já entregue
+2. Clique "Ver Resultado"
+3. Mostrará:
+   - Nota dada
+   - Comentário do professor
+   - Data da correção
+
+BAIXAR ATIVIDADE:
+1. Se professor anexou arquivo
+2. Clique "Baixar"
+3. Arquivo PDF/Doc será baixado
+
+
+8.4 FREQUÊNCIA
+--------------
+
+Visualiza sua frequência nas aulas:
+
+TABELA DE FREQUÊNCIA:
+┌──────────────┬──────┬─────────┐
+│ Data         │ Aula │ Status  │
+├──────────────┼──────┼─────────┤
+│ 01/10/2025   │ MAT  │ P       │
+│ 02/10/2025   │ PORT │ F       │
+│ 03/10/2025   │ HIS  │ J       │
+└──────────────┴──────┴─────────┘
+
+Significados:
+- P = Presente
+- F = Falta
+- J = Falta Justificada
+
+PERCENTUAL DE FREQUÊNCIA:
+- Mostra quantas aulas presenciou vs total
+- Exemplo: "32/35 aulas" = 91.4% frequência
+
+⚠️  ATENÇÃO: Frequência < 75% pode resultar em reprovação!
+
+
+8.5 DESEMPENHO E ESTATÍSTICAS
+-----------------------------
+
+Análise detalhada do seu desempenho:
+
+ESTATÍSTICAS GERAIS:
+- 🎯 Média Geral: Sua média em todas matérias
+- 📈 Maior Nota: A melhor nota que você tirou
+- 📉 Menor Nota: A pior nota que você tirou
+- 📝 Total de Avaliações: Quantas provas fez
+- ✅ Notas ≥ 7.0: Quantas notas boas
+- ⚠️ Notas 5.0-6.9: Quantas em recuperação
+- ❌ Notas < 5.0: Quantas ruins
+
+DESEMPENHO POR BIMESTRE:
+- 1º Bimestre: Média neste período
+- 2º Bimestre: Média neste período
+- 3º Bimestre: Média neste período
+- 4º Bimestre: Média neste período
+
+ANÁLISE POR MATÉRIA:
+- 🥇 Melhor Matéria: Em qual matéria você se destaca
+- 📚 Matéria para Focar: Qual matéria precisa melhorar
+
+GRÁFICOS:
+- Gráfico de linha: Evolução de notas ao longo dos bimestres
+- Gráfico de pizza: Distribuição de notas (aprovado, recuperação, reprovado)
+- Gráfico de barras: Comparação de média por matéria
+
+
+8.6 SEGURANÇA - TROCAR SENHA
+----------------------------
+
+Para trocar sua senha:
+
+1. Clique aba "Segurança"
+2. Preencha:
+   - Senha atual (para verificar que é você)
+   - Senha nova (mínimo 8 caracteres, letras + números)
+   - Confirmar senha nova
+
+3. Requisitos de senha segura:
+   ✓ Mínimo 8 caracteres
+   ✓ Pelo menos 1 letra maiúscula (A-Z)
+   ✓ Pelo menos 1 letra minúscula (a-z)
+   ✓ Pelo menos 1 número (0-9)
+   ✓ Opcional: 1 caractere especial (!@#$)
+
+4. Clique "Atualizar Senha"
+5. Se tudo ok, senha será alterada
+6. Próximo login use nova senha
+
+
+================================================================================
+9. FUNCIONALIDADES COMUNS (TODOS USUÁRIOS)
+================================================================================
+
+9.1 BOTÃO "SAIR DA CONTA"
+------------------------
+Aparece em todos os painéis.
+
+O que faz:
+- Faz logout do usuário atual
+- Retorna para tela de login
+- Outra pessoa pode fazer login
+- Aplicação continua aberta (não fecha)
+
+Como usar:
+1. Clique "Sair da Conta"
+2. Confirmação: "Tem certeza?"
+3. Clique "Sim"
+4. Voltará para tela de login
+
+
+9.2 BOTÃO "SAIR DO APLICATIVO"
+------------------------------
+Fecha o aplicativo completamente.
+
+Como usar:
+1. Na tela de login, clique "Sair"
+2. Confirmação: "Deseja sair do aplicativo?"
+3. Clique "Sim"
+4. Aplicativo fecha
+
+
+9.3 SINCRONIZANDO DADOS
+-----------------------
+Dados são sincronizados automaticamente:
+
+Ao fazer qualquer mudança (lançar nota, criar turma, etc):
+1. Dados são salvos localmente
+2. Enviados para servidor
+3. Servidor armazena de forma centralizada
+4. Próxima vez que outro usuário conectar, receberá dados atualizados
+
+⚠️  IMPORTANTE: Precisa estar conectado à rede!
+
+
+================================================================================
+10. TRATAMENTO DE PROBLEMAS
+================================================================================
+
+10.1 ERRO: "Não consegue conectar ao servidor"
+----------------------------------------------
+Problema: Cliente não consegue comunicar com servidor
+
+Causas possíveis:
+- Servidor não está rodando
+- IP/porta incorretos
+- Sem conexão de rede
+- Firewall bloqueando
+
+Soluções:
+1. Verificar se servidor está rodando
+2. Verificar config_cliente.json:
+   - servidor_host está correto?
+   - servidor_porta = 65432?
+3. Testar: python test_conexao.py
+4. Verificar se máquina está conectada à rede
+5. Verificar firewall Windows
+
+
+10.2 ERRO: "Credenciais inválidas"
+---------------------------------
+Problema: Usuário ou senha errados
+
+Soluções:
+- Verificar se Caps Lock está desativado
+- Verificar se usuário existe no sistema
+- Pedir admin para resetar senha
+- Tentar com RA (alunos)
+
+
+10.3 ERRO: "Timeout de conexão"
+-------------------------------
+Problema: Servidor demorando demais para responder
+
+Soluções:
+1. Aumentar timeout em config_cliente.json:
+   "timeout_conexao": 30    (de 10 para 30)
+
+2. Verificar se servidor está sobrecarregado
+3. Reiniciar servidor
+4. Tentar novamente
+
+
+10.4 ERRO: "Falha ao salvar dados"
+---------------------------------
+Problema: Dados não foram salvos no servidor
+
+Causas:
+- Servidor offline
+- Sem espaço em disco
+- Permissões insuficientes
+
+Soluções:
+1. Verificar conexão com servidor
+2. Tentar novamente em alguns segundos
+3. Contactar administrador
+
+
+10.5 INTERFACE CONGELADA
+-----------------------
+Problema: Aplicativo não responde
+
+O que fazer:
+1. Aguarde 30 segundos (pode estar processando)
+2. Se continuar:
+   - Alt + F4 para fechar (perderá dados não salvos)
+   - Reiniciar aplicativo
+
+Prevenção:
+- Não fazer muitas ações simultâneas
+- Aguardar conclusão de cada operação
+
+
+================================================================================
+11. DICAS E BOAS PRÁTICAS
+================================================================================
+
+11.1 PARA TODOS OS USUÁRIOS
+---------------------------
+✓ Guardar senha em local seguro
+✓ Trocar senha regularmente
+✓ Fazer logout ao sair da máquina
+✓ Reportar qualquer erro ao admin
+✓ Fazer backup dos dados importantes
+
+
+11.2 PARA ADMIN
+---------------
+✓ Fazer backup semanal dos dados
+✓ Revisar logs regularmente
+✓ Criar senha forte para admin
+✓ Não compartilhar credenciais admin
+✓ Criar relatórios mensais
+✓ Testar backup periodicmente
+
+
+11.3 PARA PROFESSOR
+-------------------
+✓ Lançar notas assim que possível
+✓ Revisar relatório de desempenho regularmente
+✓ Usar atividades para engajar alunos
+✓ Registrar frequência diariamente
+✓ Fornecer feedback aos alunos
+✓ Arquivar atividades antigas
+
+
+11.4 PARA ALUNO
+---------------
+✓ Verificar notas regularmente
+✓ Entregar atividades no prazo
+✓ Manter frequência acima de 75%
+✓ Verificar comentários do professor
+✓ Estudar conforme desempenho mostra
+✓ Participar de aulas (presença)
+
+
+================================================================================
+12. ATALHOS DE TECLADO
+================================================================================
+
+Em qualquer lugar:
+- Ctrl + C        = Copiar
+- Ctrl + V        = Colar
+- Ctrl + Z        = Desfazer
+- Ctrl + S        = Salvar
+- Ctrl + F        = Buscar
+
+Na tela de login:
+- Enter           = Fazer login
+- Esc             = Sair do aplicativo
+
+Nas tabelas:
+- ↑ ↓             = Navegar linhas
+- ← →             = Navegar colunas
+- Double-click    = Editar célula
+- Delete          = Deletar linha
+
+
+================================================================================
+13. CHECKLIST ANTES DE USAR
+================================================================================
+
+□ Servidor está rodando?
+□ Está conectado à rede?
+□ config_cliente.json está correto?
+□ Acesso de rede liberado (firewall)?
+□ Tem credenciais de acesso?
+□ Navegador com acesso se necessário?
+
+
+================================================================================
+14. CONTATO E SUPORTE
+================================================================================
+
+Em caso de problemas:
+
+1. Consultar seção 10 (Tratamento de Problemas)
+2. Executar test_conexao.py
+3. Verificar MANUAL_SERVER.txt
+4. Consultar documentacao_completa.txt
+5. Contactar administrador do sistema
+
+
+================================================================================
+15. REFERÊNCIA RÁPIDA
+================================================================================
+
+INICIANDO:
+- Clique duplo em "iniciar_sistema.bat"
+- Ou: python client_gui.py (na pasta /Client/python)
+
+LOGIN PADRÃO:
+- Usuário: admin
+- Senha: admin123
+
+CONFIGURAÇÃO:
+- Editar: /Client/python/config_cliente.json
+
+TESTANDO CONEXÃO:
+- Executar: python test_conexao.py
+
+TIPOS DE USUÁRIO E FUNCIONALIDADES:
+
+ADMIN:
+- Gerenciar todos usuários
+- Gerenciar turmas e matérias
+- Ver todos relatórios
+- Configurar sistema
+
+PROFESSOR:
+- Lançar notas
+- Gerenciar atividades
+- Registrar frequência
+- Ver desempenho turma
+
+ALUNO:
+- Ver suas notas
+- Ver boletim
+- Entregar atividades
+- Ver frequência
+
+
+================================================================================
+FIM DO MANUAL DO CLIENTE
+================================================================================
+
+Versão: 3.0
+Última atualização: 12 de novembro de 2025
+Desenvolvido para: Sistema Acadêmico PED-BEGH
+
+Seções: 15
+Páginas: Completo
+Usuários cobertos: Admin, Professor, Aluno

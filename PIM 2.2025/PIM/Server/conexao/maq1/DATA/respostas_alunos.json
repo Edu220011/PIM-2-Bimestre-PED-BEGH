@@ -1,0 +1,17 @@
+[
+  {
+    "ra_aluno": "10000000",
+    "nome_aluno": "Eduardo Antonio de Almeida Oliveira",
+    "atividade_id": 1759965264286,
+    "atividade_nome": "Teste Atividae",
+    "materia_id": 1,
+    "registro_aula": "Teste Aula",
+    "data_resposta": "08/10/2025 21:28:07",
+    "tipo_atividade": "Múltipla Escolha",
+    "respostas": [
+      "A",
+      "D"
+    ],
+    "status": "Respondida"
+  }
+]

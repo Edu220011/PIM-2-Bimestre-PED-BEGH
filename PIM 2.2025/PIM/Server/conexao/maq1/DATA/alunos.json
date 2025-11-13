@@ -1,0 +1,71 @@
+[
+  {
+    "cpf": "",
+    "data_nascimento": "01/01/2001",
+    "email": "dudu.almeidakcond@gmail.com",
+    "endereco": "",
+    "nome": "Eduardo Antonio de Almeida Oliveira",
+    "nome_mae": "Roberta Carlas Silva",
+    "observacoes": "Série desejada: 1ª Série",
+    "ra": "10000000",
+    "senha": "1",
+    "status": "Ativo",
+    "telefone": "(19)999595231",
+    "usuario": "edu"
+  },
+  {
+    "data_cadastro": "08/10/2025 19:50:55",
+    "data_nascimento": "19/03/2000",
+    "nome": "Teste de aluno 1",
+    "observacoes": "",
+    "ra": "10000001",
+    "senha": "123",
+    "status": "Ativo",
+    "tipo": "aluno",
+    "usuario": "test"
+  },
+  {
+    "data_cadastro": "08/10/2025 19:59:00",
+    "data_nascimento": "19/03/2000",
+    "nome": "Antonio Eduardo",
+    "observacoes": "",
+    "ra": "10000002",
+    "senha": "$2b$12$8jFM/mm2FNuJZgwo1l2LmODD8dwPuguXqW2BJB/A6ITafj6P3RyJe",
+    "status": "Ativo",
+    "tipo": "aluno",
+    "usuario": "Antonionho"
+  },
+  {
+    "data_cadastro": "08/10/2025 21:18:58",
+    "data_nascimento": "19/03/2008",
+    "nome": "Test 23",
+    "observacoes": "",
+    "ra": "10000004",
+    "senha": "$2b$12$NQQ7LQrUxKf37lX6iaW60ed0xSrDYLOF6xYt7uIe0L2tlqsUYOVKq",
+    "status": "Ativo",
+    "tipo": "aluno",
+    "usuario": "Test2"
+  },
+  {
+    "data_cadastro": "13/10/2025 19:32:42",
+    "data_nascimento": "12/12/2009",
+    "nome": "gg gg g",
+    "observacoes": "aaa aaa",
+    "ra": "10000005",
+    "senha": "$2b$12$7AYZXFvljPwRnavXcgJd7.AGMsrIvG5uQaPBUozmwdy3TY.qTRXq2",
+    "status": "Ativo",
+    "tipo": "aluno",
+    "usuario": "ggg3"
+  },
+  {
+    "tipo": "aluno",
+    "usuario": "Teste",
+    "senha": "$2b$12$xG4ClNZJLL3kJlD0HodLcupsFeWEtgRlJ5ZOuEZeEU7ZSWwmqYUVm",
+    "nome": "Testeeeeeeeeeeee",
+    "ra": "10000006",
+    "data_nascimento": "19/09/2000",
+    "status": "Ativo",
+    "observacoes": "",
+    "data_cadastro": "12/11/2025 21:16:39"
+  }
+]

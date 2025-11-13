@@ -1,0 +1,128 @@
+[
+  {
+    "materia_id": 101,
+    "professor_login": "raul",
+    "data": "09/09/2025",
+    "nome_aula": "Ensinamentos de Terrenos com Erosão",
+    "descricao": "Explicando como funciona a erosão e como previnir",
+    "atividades": [
+      {
+        "id": 1725897600000,
+        "nome": "Quiz sobre Tipos de Erosão",
+        "descricao": "Teste seus conhecimentos sobre os diferentes tipos de erosão do solo.",
+        "tipo": "Múltipla Escolha",
+        "data_entrega": "15/09/2025",
+        "pontuacao_maxima": 10.0,
+        "status": "Liberada",
+        "professor_login": "raul",
+        "data_criacao": "09/09/2025 14:30:00",
+        "perguntas": [
+          {
+            "pergunta": "Qual é o principal agente causador da erosão hídrica?",
+            "alternativas": {
+              "A": "Vento",
+              "B": "Água da chuva",
+              "C": "Temperatura",
+              "D": "Gravidade"
+            },
+            "resposta_correta": "B"
+          },
+          {
+            "pergunta": "A erosão eólica é causada principalmente por:",
+            "alternativas": {
+              "A": "Água",
+              "B": "Gelo",
+              "C": "Vento",
+              "D": "Animais"
+            },
+            "resposta_correta": "C"
+          }
+        ]
+      },
+      {
+        "id": 1725898200000,
+        "nome": "Ensaio sobre Prevenção da Erosão",
+        "descricao": "Redija um ensaio sobre métodos de prevenção da erosão do solo.",
+        "tipo": "Dissertativa",
+        "data_entrega": "20/09/2025",
+        "pontuacao_maxima": 8.0,
+        "status": "Liberada",
+        "professor_login": "raul",
+        "data_criacao": "09/09/2025 14:45:00",
+        "perguntas": [
+          {
+            "pergunta": "Descreva pelo menos três métodos eficazes para prevenir a erosão do solo em áreas agrícolas e explique como cada um funciona.",
+            "criterios": "Clareza na explicação, conhecimento técnico, organização das ideias, exemplos práticos."
+          },
+          {
+            "pergunta": "Analise os impactos da erosão do solo na produtividade agrícola e na sustentabilidade ambiental.",
+            "criterios": "Profundidade da análise, conexão entre conceitos, uso de exemplos, argumentação consistente."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "materia_id": 103,
+    "professor_login": "raul",
+    "data": "19/06/2000",
+    "nome_aula": "Teste",
+    "descricao": "aaaaaaaaaaaaaaa",
+    "atividades": []
+  },
+  {
+    "materia_id": 1,
+    "professor_login": "raul",
+    "data": "08/10/2025",
+    "nome_aula": "Teste Aula",
+    "descricao": "Teste Aula",
+    "atividades": [
+      {
+        "id": 1759965264286,
+        "nome": "Teste Atividae",
+        "descricao": "Teste de Atividades",
+        "tipo": "Múltipla Escolha",
+        "data_entrega": "10/10/2025",
+        "pontuacao_maxima": 10.0,
+        "status": "Liberada",
+        "professor_login": "raul",
+        "data_criacao": "08/10/2025 20:14:24",
+        "quantidade_questoes": 2,
+        "perguntas": [
+          {
+            "numero": 1,
+            "tipo": "multipla_escolha",
+            "pergunta": "Quanto é 1+1 ?",
+            "alternativas": {
+              "A": "2",
+              "B": "3",
+              "C": "7",
+              "D": "5"
+            },
+            "resposta_correta": "A"
+          },
+          {
+            "numero": 2,
+            "tipo": "multipla_escolha",
+            "pergunta": "Quanto é 2*2² ?",
+            "alternativas": {
+              "A": "2",
+              "B": "8",
+              "C": "4",
+              "D": "12"
+            },
+            "resposta_correta": "D"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "materia_id": 1,
+    "professor_login": "raul",
+    "data": "13/10/2025",
+    "nome_aula": "Teste Aula",
+    "descricao": "Aaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "atividades": []
+  }
+]

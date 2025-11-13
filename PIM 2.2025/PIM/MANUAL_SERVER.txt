@@ -1,0 +1,456 @@
+================================================================================
+                    MANUAL DE UTILIZAÇÃO - SERVIDOR (SERVER)
+                            SISTEMA ACADÊMICO PED-BEGH
+================================================================================
+
+Data: 12 de novembro de 2025
+Versão: 3.0
+Localização: /Server
+
+================================================================================
+1. INTRODUÇÃO
+================================================================================
+
+O servidor é o componente central responsável por:
+- Gerenciar todas as conexões dos clientes (computadores dos usuários)
+- Armazenar e sincronizar dados acadêmicos
+- Processar requisições de leitura e escrita de arquivos JSON
+- Controlar o acesso concorrente (evitar conflitos de dados)
+
+Localização: /Server/conexao/maq1/
+
+
+================================================================================
+2. PRÉ-REQUISITOS E INSTALAÇÃO
+================================================================================
+
+2.1 REQUISITOS DO SISTEMA
+--------------------------
+✓ Python 3.8 ou superior instalado
+✓ Acesso ao terminal/PowerShell
+✓ Conexão de rede (para comunicação entre máquinas)
+✓ Porta 65432 disponível (não bloqueada por firewall)
+
+2.2 INSTALAÇÃO AUTOMÁTICA
+---------------------------
+1. Navegue até a pasta /Server
+2. Clique duas vezes em "instalar_dependencias.bat"
+3. Aguarde a conclusão da instalação
+4. O script criará automaticamente:
+   - Ambiente virtual Python (venv)
+   - Instalará dependências (Flask, Flask-CORS)
+   - Configurará extensões VS Code
+
+2.3 INSTALAÇÃO MANUAL
+---------------------
+Caso a instalação automática falhe:
+
+a) Abrir PowerShell na pasta /Server
+b) Executar os seguintes comandos:
+
+   python -m venv venv
+   .\venv\Scripts\Activate.ps1
+   pip install flask flask-cors
+
+c) Aguarde a conclusão
+
+
+================================================================================
+3. INICIANDO O SERVIDOR
+================================================================================
+
+3.1 INICIALIZAÇÃO AUTOMÁTICA
+-----------------------------
+1. Na pasta /Server, clique duas vezes em "iniciar_server.bat"
+2. Uma janela de terminal será aberta
+3. Você verá mensagens como:
+   
+   [INFO] Servidor iniciado em 127.0.0.1:65432
+   [INFO] Aguardando conexões de clientes...
+
+3.2 INICIALIZAÇÃO MANUAL
+------------------------
+1. Abrir PowerShell na pasta /Server/conexao/maq1
+2. Executar:
+
+   python server.py
+
+3. Aguarde pelas mensagens de confirmação
+
+3.3 COMO SABER SE O SERVIDOR ESTÁ FUNCIONANDO
+-----------------------------------------------
+Você deve ver mensagens no terminal como:
+- [INFO] Servidor rodando em 0.0.0.0:65432
+- [INFO] Aguardando conexões...
+- [INFO] Cliente conectado de 192.168.x.x
+- [INFO] Dados salvos: alunos.json
+
+
+================================================================================
+4. ESTRUTURA DE DADOS DO SERVIDOR
+================================================================================
+
+4.1 DIRETÓRIO DE DADOS
+-----------------------
+Localização: /Server/conexao/maq1/DATA/
+
+Arquivos principais:
+
+├── admin.json              → Dados dos administradores
+├── alunos.json            → Dados dos alunos (RA, nome, turma, etc)
+├── professores.json       → Dados dos professores
+├── turmas.json            → Dados das turmas
+├── materias.json          → Dados das matérias/disciplinas
+├── notas.json             → Todas as notas dos alunos
+├── boletim.json           → Boletins bimestrais
+├── registros_aula.json    → Registros de presença/frequência
+├── respostas_alunos.json  → Respostas de atividades
+└── pedidos.json           → Pedidos diversos do sistema
+
+4.2 FORMATO DOS ARQUIVOS JSON
+------------------------------
+Todos os arquivos seguem estrutura JSON com codificação UTF-8.
+
+Exemplo de estrutura (alunos.json):
+{
+  "id": "aluno_001",
+  "ra": "202401001",
+  "nome": "João Silva",
+  "email": "joao@escola.com",
+  "usuario": "joao.silva",
+  "senha": "$2b$12$...",           (senhas criptografadas com bcrypt)
+  "tipo": "aluno",
+  "data_criacao": "2024-01-15",
+  "ativo": true
+}
+
+4.3 ARQUIVO DE CONFIGURAÇÃO
+----------------------------
+Localização: /Server/conexao/maq1/config_server.json
+
+{
+  "host": "0.0.0.0",              (0.0.0.0 = aceita conexões de qualquer máquina)
+  "porta": 65432,                 (porta de comunicação)
+  "timeout": 30,                  (tempo máximo para requisição)
+  "max_conexoes": 50,             (máximo de clientes simultâneos)
+  "data_dir": "./DATA"            (diretório onde ficam os dados)
+}
+
+
+================================================================================
+5. LOGS DO SERVIDOR
+================================================================================
+
+5.1 ARQUIVO DE LOG
+-------------------
+Localização: /Server/conexao/maq1/server.log
+
+Registra todas as operações:
+- Inicialização do servidor
+- Conexões de clientes
+- Leituras e escritas de dados
+- Erros e exceções
+- Hora de cada operação
+
+5.2 LENDO OS LOGS
+------------------
+Abra o arquivo server.log com qualquer editor de texto:
+- Notepad
+- VS Code
+- Bloco de Notas
+
+Formato das mensagens:
+2025-11-12 10:30:45 - INFO - Cliente conectado: 192.168.1.50
+2025-11-12 10:30:46 - INFO - Dados carregados: alunos.json
+2025-11-12 10:30:47 - WARNING - Conflito de acesso detectado
+2025-11-12 10:30:48 - ERROR - Falha ao salvar dados
+
+5.3 INTERPRETANDO MENSAGENS
+----------------------------
+[INFO]     → Operação normal completada com sucesso
+[WARNING]  → Situação que requer atenção mas não impede funcionamento
+[ERROR]    → Erro que afeta o funcionamento
+[CRITICAL] → Erro crítico que pode travar o servidor
+
+
+================================================================================
+6. OPERAÇÕES COMUNS DO SERVIDOR
+================================================================================
+
+6.1 SINCRONIZANDO DADOS ENTRE MÁQUINAS
+---------------------------------------
+O servidor sincroniza automaticamente dados quando:
+- Um cliente carrega dados (resgata do arquivo JSON)
+- Um cliente salva dados (escreve no arquivo JSON)
+
+Processo:
+1. Cliente A faz uma alteração (ex: lança nota)
+2. Cliente A envia para servidor
+3. Servidor salva no arquivo JSON
+4. Quando Cliente B conectar, receberá dados atualizados
+
+6.2 ADICIONANDO NOVOS USUÁRIOS
+-------------------------------
+Os novos usuários são adicionados via interface Cliente (GUI do Admin)
+O servidor recebe os dados e salva nos respectivos JSONs:
+- novo_admin → alunos.json com tipo="admin"
+- novo_professor → professores.json
+- novo_aluno → alunos.json com tipo="aluno"
+
+6.3 FAZENDO BACKUP DOS DADOS
+----------------------------
+Procedimento recomendado (SEMANAL):
+
+1. Localizar a pasta: /Server/conexao/maq1/DATA/
+2. Copiar todos os arquivos .json
+3. Colar em pasta de backup (ex: Backup_2025-11-12/)
+4. Guardar em local seguro (pen drive, nuvem, etc)
+
+Ou usar comando no PowerShell:
+   Copy-Item -Path "./DATA" -Destination "./Backup_$(Get-Date -f 'yyyy-MM-dd')" -Recurse
+
+6.4 RESTAURANDO DADOS DE BACKUP
+-------------------------------
+1. Localizar pasta de backup
+2. Copiar todos os arquivos .json
+3. Colar em /Server/conexao/maq1/DATA/
+4. Confirmar sobrescrita de arquivos
+5. Reiniciar o servidor
+
+
+================================================================================
+7. GERENCIAMENTO DE CONEXÕES
+================================================================================
+
+7.1 VERIFICANDO CLIENTES CONECTADOS
+-----------------------------------
+No terminal do servidor, você verá mensagens como:
+[INFO] Cliente conectado: 192.168.1.50 (João - Admin)
+[INFO] Cliente desconectado: 192.168.1.50
+
+7.2 LIMITANDO CONEXÕES
+-----------------------
+Se o servidor ficar lento com muitos clientes:
+
+1. Abrir config_server.json
+2. Alterar "max_conexoes": 50
+3. Salvar arquivo
+4. Reiniciar servidor
+
+Recomendado:
+- 10-20 usuários simultâneos = max_conexoes: 30
+- 20-50 usuários simultâneos = max_conexoes: 60
+- 50+ usuários simultâneos = considerar segundo servidor
+
+7.3 TIMEOUT DE CONEXÃO
+----------------------
+Se clientes conectarem mas não responderem:
+
+1. Abrir config_server.json
+2. Alterar "timeout": 30 (em segundos)
+3. Aumentar valor se clientes perderem conexão frequentemente
+
+
+================================================================================
+8. TRATAMENTO DE PROBLEMAS
+================================================================================
+
+8.1 ERRO: "Porta 65432 já em uso"
+---------------------------------
+Problema: Outro programa está usando a porta 65432
+
+Solução:
+a) Fechar outro servidor que esteja rodando
+b) Abrir PowerShell como Administrador
+c) Executar: netstat -ano | findstr :65432
+d) Identificar o PID e finalizar o processo
+e) Ou alterar porta em config_server.json
+
+8.2 ERRO: "config_server.json não encontrado"
+---------------------------------------------
+Problema: Arquivo de configuração está faltando
+
+Solução:
+1. Verificar se está em: /Server/conexao/maq1/
+2. Se não existir, criar arquivo com conteúdo:
+{
+  "host": "0.0.0.0",
+  "porta": 65432,
+  "timeout": 30,
+  "max_conexoes": 50,
+  "data_dir": "./DATA"
+}
+3. Reiniciar servidor
+
+8.3 ERRO: "Falha ao carregar JSON"
+---------------------------------
+Problema: Arquivo JSON corrompido ou inválido
+
+Solução:
+1. Abrir o arquivo com editor de texto
+2. Verificar se começa com [ e termina com ]
+3. Verificar se todas as aspas estão fechadas
+4. Usar online JSONLint para validar
+5. Se corrompido, restaurar de backup
+
+8.4 ERRO: "Permissão negada" ao salvar
+--------------------------------------
+Problema: Servidor não tem permissão de escrita
+
+Solução:
+1. Fechar servidor (Ctrl+C no terminal)
+2. Clique direito na pasta /Data
+3. Propriedades → Segurança
+4. Editar → Seu usuário → Marcar "Controle Total"
+5. Aplicar e reiniciar servidor
+
+8.5 ERRO: "Clientes não conseguem conectar"
+-------------------------------------------
+Problema: Firewall bloqueando porta 65432
+
+Solução no Windows:
+1. Painel de Controle → Firewall do Windows
+2. Permitir aplicativo através do firewall
+3. Procurar python.exe
+4. Marcar "Privado" e "Público"
+5. OK e reiniciar servidor
+
+Ou via PowerShell (como Administrador):
+   New-NetFirewallRule -DisplayName "Python Server" `
+   -Direction Inbound -Action Allow -Protocol TCP -LocalPort 65432
+
+
+================================================================================
+9. MONITORAMENTO E PERFORMANCE
+================================================================================
+
+9.1 VERIFICANDO PERFORMANCE
+----------------------------
+Monitore no Gerenciador de Tarefas (Ctrl+Shift+Esc):
+- Uso de CPU do processo Python: < 20% é normal
+- Uso de Memória: < 200 MB é normal
+- Se acima disso, há problema
+
+9.2 OTIMIZANDO PERFORMANCE
+--------------------------
+Se o servidor ficar lento:
+
+1. Reduzir max_conexoes se houver muitas
+2. Aumentar timeout se houver timeouts frequentes
+3. Limpar arquivos JSON muito grandes (dividir em múltiplos)
+4. Rodar servidor em máquina dedicada
+5. Aumentar RAM da máquina servidor
+
+9.3 MONITORANDO ARQUIVOS JSON
+-----------------------------
+Tamanho recomendado dos arquivos:
+- alunos.json: < 5 MB
+- notas.json: < 20 MB
+- respostas_alunos.json: < 50 MB
+
+Se exceder, fazer backup e limpar arquivos antigos.
+
+
+================================================================================
+10. SEGURANÇA
+================================================================================
+
+10.1 PROTEGENDO O SERVIDOR
+---------------------------
+✓ Não deixar servidor ligado em local público
+✓ Usar firewall Windows
+✓ Não expor porta 65432 para internet
+✓ Usar apenas em rede local
+✓ Fazer backup regular dos dados
+
+10.2 SENHAS CRIPTOGRAFADAS
+---------------------------
+Todas as senhas no JSON estão criptografadas com bcrypt.
+Exemplo: "$2b$12$...(muito longo)"
+
+Nunca:
+- Copiar/colar para texto plano
+- Compartilhar arquivo com outro computador desprotegido
+- Modificar manualmente
+
+10.3 CONTROLE DE ACESSO
+-----------------------
+O servidor NÃO faz autenticação de clientes.
+A autenticação é feita no CLIENTE (GUI).
+
+Fluxo:
+1. Cliente recebe login (usuário/senha)
+2. Cliente verifica hash bcrypt
+3. Se ok, cliente pode salvar/carregar dados
+
+
+================================================================================
+11. CHECKLIST DE MANUTENÇÃO
+================================================================================
+
+DIÁRIO:
+□ Verificar se servidor está rodando
+□ Conferir se há erro nos logs (server.log)
+□ Testar com pelo menos 1 cliente
+□ Anotar qualquer mensagem de erro
+
+SEMANAL:
+□ Fazer backup dos arquivos JSON
+□ Limpar logs antigos se arquivo ficar grande
+□ Reiniciar servidor (para liberar memória)
+□ Testar com múltiplos clientes simultâneos
+
+MENSAL:
+□ Revisar structure dos dados
+□ Otimizar arquivos JSON grandes
+□ Atualizar config_server.json conforme necessário
+□ Documentar mudanças realizadas
+
+TRIMESTRAL:
+□ Fazer restauração de teste do backup
+□ Revisar performance geral
+□ Atualizar versão do Python
+□ Revisar segurança
+
+
+================================================================================
+12. CONTATO E SUPORTE
+================================================================================
+
+Em caso de dúvidas ou problemas persistentes:
+
+1. Revisar este manual (pode estar em 11. Tratamento de Problemas)
+2. Consultar MANUAL_CLIENT.txt para entender funcionamento cliente
+3. Verificar documentacao_completa.txt para detalhes técnicos
+4. Consultar logs em /Server/conexao/maq1/server.log
+5. Contactar administrador do sistema
+
+
+================================================================================
+13. REFERÊNCIA RÁPIDA DE COMANDOS
+================================================================================
+
+PowerShell - Iniciar servidor:
+   cd "c:\caminho\para\Server\conexao\maq1"
+   python server.py
+
+PowerShell - Ativar venv:
+   ..\..\..\venv\Scripts\Activate.ps1
+
+PowerShell - Verificar logs em tempo real:
+   Get-Content -Path server.log -Wait
+
+PowerShell - Fazer backup:
+   Copy-Item -Path "./DATA" -Destination "./Backup_$(Get-Date -f 'yyyy-MM-dd')" -Recurse
+
+PowerShell - Parar servidor:
+   Ctrl + C no terminal
+
+
+================================================================================
+FIM DO MANUAL DO SERVIDOR
+================================================================================
+
+Versão: 3.0
+Última atualização: 12 de novembro de 2025
+Desenvolvido para: Sistema Acadêmico PED-BEGH

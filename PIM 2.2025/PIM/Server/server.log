@@ -1,0 +1,230 @@
+2025-10-28 19:52:22,607 - INFO - [DIR] Diretório de dados configurado: C:\Users\Assupero.M_36\Desktop\PIM\Server\conexao\maq1\DATA
+2025-10-28 19:52:22,607 - INFO - [WORKER] Worker thread iniciado
+2025-10-28 19:52:22,623 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5555
+ * Running on http://192.168.0.36:5555
+2025-10-28 19:52:22,623 - INFO - [33mPress CTRL+C to quit[0m
+2025-10-28 19:53:47,390 - INFO - [DIR] Diretório de dados configurado: C:\Users\Assupero.M_36\Desktop\PIM 3.0\Server\conexao\maq1\DATA
+2025-10-28 19:53:47,390 - INFO - [WORKER] Worker thread iniciado
+2025-10-28 19:53:47,405 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5555
+ * Running on http://192.168.0.36:5555
+2025-10-28 19:53:47,405 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-12 21:06:48,549 - INFO - [DIR] Diretório de dados configurado: C:\Users\Assupero\Desktop\PIM-2-Bimestre-PED-BEGH-main\PIM 2.2025\PIM\Server\conexao\maq1\DATA
+2025-11-12 21:06:48,550 - INFO - [WORKER] Worker thread iniciado
+2025-11-12 21:06:48,573 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5555
+ * Running on http://192.168.0.84:5555
+2025-11-12 21:06:48,574 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-12 21:10:09,308 - INFO - [DIR] Diretório de dados configurado: C:\Users\Assupero\Desktop\PIM-2-Bimestre-PED-BEGH-main\PIM 2.2025\PIM\Server\conexao\maq1\DATA
+2025-11-12 21:10:09,310 - INFO - [WORKER] Worker thread iniciado
+2025-11-12 21:10:09,323 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5555
+ * Running on http://192.168.0.84:5555
+2025-11-12 21:10:09,324 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-12 21:12:01,748 - INFO - 192.168.0.85 - - [12/Nov/2025 21:12:01] "GET /ping HTTP/1.1" 200 -
+2025-11-12 21:14:04,464 - INFO - [DIR] Diretório de dados configurado: C:\Users\Assupero\Desktop\PIM-2-Bimestre-PED-BEGH-main\PIM 2.2025\PIM\Server\conexao\maq1\DATA
+2025-11-12 21:14:04,465 - INFO - [WORKER] Worker thread iniciado
+2025-11-12 21:14:04,477 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5555
+ * Running on http://192.168.0.84:5555
+2025-11-12 21:14:04,477 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-12 21:15:25,621 - INFO - 192.168.0.85 - - [12/Nov/2025 21:15:25] "GET /ping HTTP/1.1" 200 -
+2025-11-12 21:15:42,593 - INFO - [LOAD] Arquivo carregado: alunos.json (5 registros)
+2025-11-12 21:15:42,595 - INFO - 192.168.0.85 - - [12/Nov/2025 21:15:42] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:15:42,656 - INFO - [LOAD] Arquivo carregado: professores.json (3 registros)
+2025-11-12 21:15:42,657 - INFO - 192.168.0.85 - - [12/Nov/2025 21:15:42] "GET /api/read/professores.json HTTP/1.1" 200 -
+2025-11-12 21:15:42,716 - INFO - [LOAD] Arquivo carregado: admin.json (1 registros)
+2025-11-12 21:15:42,717 - INFO - 192.168.0.85 - - [12/Nov/2025 21:15:42] "GET /api/read/admin.json HTTP/1.1" 200 -
+2025-11-12 21:15:43,403 - INFO - [LOAD] Arquivo carregado: professores.json (3 registros)
+2025-11-12 21:15:43,405 - INFO - 192.168.0.85 - - [12/Nov/2025 21:15:43] "GET /api/read/professores.json HTTP/1.1" 200 -
+2025-11-12 21:15:43,495 - INFO - [LOAD] Arquivo carregado: alunos.json (5 registros)
+2025-11-12 21:15:43,497 - INFO - 192.168.0.85 - - [12/Nov/2025 21:15:43] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:15:43,542 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:15:43,544 - INFO - 192.168.0.85 - - [12/Nov/2025 21:15:43] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:15:43,634 - INFO - [LOAD] Arquivo carregado: alunos.json (5 registros)
+2025-11-12 21:15:43,636 - INFO - 192.168.0.85 - - [12/Nov/2025 21:15:43] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:15:43,695 - INFO - [LOAD] Arquivo carregado: professores.json (3 registros)
+2025-11-12 21:15:43,696 - INFO - 192.168.0.85 - - [12/Nov/2025 21:15:43] "GET /api/read/professores.json HTTP/1.1" 200 -
+2025-11-12 21:15:43,758 - INFO - [LOAD] Arquivo carregado: admin.json (1 registros)
+2025-11-12 21:15:43,759 - INFO - 192.168.0.85 - - [12/Nov/2025 21:15:43] "GET /api/read/admin.json HTTP/1.1" 200 -
+2025-11-12 21:15:43,849 - INFO - [LOAD] Arquivo carregado: materias.json (19 registros)
+2025-11-12 21:15:43,850 - INFO - 192.168.0.85 - - [12/Nov/2025 21:15:43] "GET /api/read/materias.json HTTP/1.1" 200 -
+2025-11-12 21:15:43,894 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:15:43,895 - INFO - 192.168.0.85 - - [12/Nov/2025 21:15:43] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:15:43,988 - INFO - [LOAD] Arquivo carregado: materias.json (19 registros)
+2025-11-12 21:15:43,989 - INFO - 192.168.0.85 - - [12/Nov/2025 21:15:43] "GET /api/read/materias.json HTTP/1.1" 200 -
+2025-11-12 21:15:44,035 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:15:44,036 - INFO - 192.168.0.85 - - [12/Nov/2025 21:15:44] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:15:44,206 - INFO - [LOAD] Arquivo carregado: pedidos.json (8 registros)
+2025-11-12 21:15:44,207 - INFO - 192.168.0.85 - - [12/Nov/2025 21:15:44] "GET /api/read/pedidos.json HTTP/1.1" 200 -
+2025-11-12 21:16:08,004 - INFO - [LOAD] Arquivo carregado: alunos.json (5 registros)
+2025-11-12 21:16:08,005 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:08] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:16:08,066 - INFO - [LOAD] Arquivo carregado: professores.json (3 registros)
+2025-11-12 21:16:08,068 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:08] "GET /api/read/professores.json HTTP/1.1" 200 -
+2025-11-12 21:16:08,127 - INFO - [LOAD] Arquivo carregado: admin.json (1 registros)
+2025-11-12 21:16:08,129 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:08] "GET /api/read/admin.json HTTP/1.1" 200 -
+2025-11-12 21:16:08,752 - INFO - [LOAD] Arquivo carregado: professores.json (3 registros)
+2025-11-12 21:16:08,753 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:08] "GET /api/read/professores.json HTTP/1.1" 200 -
+2025-11-12 21:16:08,813 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:16:08,815 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:08] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:16:08,860 - INFO - [LOAD] Arquivo carregado: materias.json (19 registros)
+2025-11-12 21:16:08,862 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:08] "GET /api/read/materias.json HTTP/1.1" 200 -
+2025-11-12 21:16:08,891 - INFO - [LOAD] Arquivo carregado: notas.json (12 registros)
+2025-11-12 21:16:08,893 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:08] "GET /api/read/notas.json HTTP/1.1" 200 -
+2025-11-12 21:16:08,936 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:16:08,938 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:08] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:16:09,045 - INFO - [LOAD] Arquivo carregado: materias.json (19 registros)
+2025-11-12 21:16:09,046 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:09] "GET /api/read/materias.json HTTP/1.1" 200 -
+2025-11-12 21:16:09,075 - INFO - [LOAD] Arquivo carregado: notas.json (12 registros)
+2025-11-12 21:16:09,077 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:09] "GET /api/read/notas.json HTTP/1.1" 200 -
+2025-11-12 21:16:09,167 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:16:09,168 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:09] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:16:09,245 - INFO - [LOAD] Arquivo carregado: materias.json (19 registros)
+2025-11-12 21:16:09,247 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:09] "GET /api/read/materias.json HTTP/1.1" 200 -
+2025-11-12 21:16:09,277 - INFO - [LOAD] Arquivo carregado: registros_aula.json (4 registros)
+2025-11-12 21:16:09,278 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:09] "GET /api/read/registros_aula.json HTTP/1.1" 200 -
+2025-11-12 21:16:26,665 - INFO - [LOAD] Arquivo carregado: alunos.json (5 registros)
+2025-11-12 21:16:26,667 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:26] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:16:26,727 - INFO - [LOAD] Arquivo carregado: professores.json (3 registros)
+2025-11-12 21:16:26,728 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:26] "GET /api/read/professores.json HTTP/1.1" 200 -
+2025-11-12 21:16:26,789 - INFO - [LOAD] Arquivo carregado: admin.json (1 registros)
+2025-11-12 21:16:26,789 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:26] "GET /api/read/admin.json HTTP/1.1" 200 -
+2025-11-12 21:16:26,853 - INFO - [LOAD] Arquivo carregado: professores.json (3 registros)
+2025-11-12 21:16:26,853 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:26] "GET /api/read/professores.json HTTP/1.1" 200 -
+2025-11-12 21:16:26,947 - INFO - [LOAD] Arquivo carregado: alunos.json (5 registros)
+2025-11-12 21:16:26,948 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:26] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:16:26,996 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:16:26,997 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:26] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:16:27,074 - INFO - [LOAD] Arquivo carregado: alunos.json (5 registros)
+2025-11-12 21:16:27,076 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:27] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:16:27,136 - INFO - [LOAD] Arquivo carregado: professores.json (3 registros)
+2025-11-12 21:16:27,137 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:27] "GET /api/read/professores.json HTTP/1.1" 200 -
+2025-11-12 21:16:27,184 - INFO - [LOAD] Arquivo carregado: admin.json (1 registros)
+2025-11-12 21:16:27,185 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:27] "GET /api/read/admin.json HTTP/1.1" 200 -
+2025-11-12 21:16:27,275 - INFO - [LOAD] Arquivo carregado: materias.json (19 registros)
+2025-11-12 21:16:27,277 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:27] "GET /api/read/materias.json HTTP/1.1" 200 -
+2025-11-12 21:16:27,306 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:16:27,307 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:27] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:16:27,368 - INFO - [LOAD] Arquivo carregado: materias.json (19 registros)
+2025-11-12 21:16:27,369 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:27] "GET /api/read/materias.json HTTP/1.1" 200 -
+2025-11-12 21:16:27,413 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:16:27,414 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:27] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:16:27,571 - INFO - [LOAD] Arquivo carregado: pedidos.json (8 registros)
+2025-11-12 21:16:27,573 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:27] "GET /api/read/pedidos.json HTTP/1.1" 200 -
+2025-11-12 21:16:36,074 - INFO - [LOAD] Arquivo carregado: alunos.json (5 registros)
+2025-11-12 21:16:36,075 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:36] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:16:36,137 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:16:36,138 - INFO - 192.168.0.85 - - [12/Nov/2025 21:16:36] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:17:05,795 - INFO - [LOAD] Arquivo carregado: alunos.json (5 registros)
+2025-11-12 21:17:05,796 - INFO - 192.168.0.85 - - [12/Nov/2025 21:17:05] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:17:05,856 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:17:05,857 - INFO - 192.168.0.85 - - [12/Nov/2025 21:17:05] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:17:10,317 - INFO - [LOAD] Arquivo carregado: alunos.json (5 registros)
+2025-11-12 21:17:10,318 - INFO - 192.168.0.85 - - [12/Nov/2025 21:17:10] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:17:57,699 - INFO - [LOAD] Arquivo carregado: pedidos.json (8 registros)
+2025-11-12 21:17:57,700 - INFO - 192.168.0.85 - - [12/Nov/2025 21:17:57] "GET /api/read/pedidos.json HTTP/1.1" 200 -
+2025-11-12 21:17:57,745 - INFO - [PROC] Processando: write em pedidos.json
+2025-11-12 21:17:57,751 - INFO - [SAVE] Arquivo salvo: pedidos.json (9 registros)
+2025-11-12 21:17:57,751 - INFO - 192.168.0.85 - - [12/Nov/2025 21:17:57] "POST /api/write/pedidos.json HTTP/1.1" 200 -
+2025-11-12 21:18:05,931 - INFO - [LOAD] Arquivo carregado: alunos.json (5 registros)
+2025-11-12 21:18:05,932 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:05] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:18:05,994 - INFO - [LOAD] Arquivo carregado: professores.json (3 registros)
+2025-11-12 21:18:05,995 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:05] "GET /api/read/professores.json HTTP/1.1" 200 -
+2025-11-12 21:18:06,056 - INFO - [LOAD] Arquivo carregado: admin.json (1 registros)
+2025-11-12 21:18:06,057 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:06] "GET /api/read/admin.json HTTP/1.1" 200 -
+2025-11-12 21:18:06,523 - INFO - [LOAD] Arquivo carregado: professores.json (3 registros)
+2025-11-12 21:18:06,524 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:06] "GET /api/read/professores.json HTTP/1.1" 200 -
+2025-11-12 21:18:06,617 - INFO - [LOAD] Arquivo carregado: alunos.json (5 registros)
+2025-11-12 21:18:06,619 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:06] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:18:06,680 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:18:06,681 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:06] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:18:06,773 - INFO - [LOAD] Arquivo carregado: alunos.json (5 registros)
+2025-11-12 21:18:06,775 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:06] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:18:06,836 - INFO - [LOAD] Arquivo carregado: professores.json (3 registros)
+2025-11-12 21:18:06,837 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:06] "GET /api/read/professores.json HTTP/1.1" 200 -
+2025-11-12 21:18:06,898 - INFO - [LOAD] Arquivo carregado: admin.json (1 registros)
+2025-11-12 21:18:06,899 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:06] "GET /api/read/admin.json HTTP/1.1" 200 -
+2025-11-12 21:18:06,992 - INFO - [LOAD] Arquivo carregado: materias.json (19 registros)
+2025-11-12 21:18:06,994 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:06] "GET /api/read/materias.json HTTP/1.1" 200 -
+2025-11-12 21:18:07,023 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:18:07,025 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:07] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:18:07,115 - INFO - [LOAD] Arquivo carregado: materias.json (19 registros)
+2025-11-12 21:18:07,116 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:07] "GET /api/read/materias.json HTTP/1.1" 200 -
+2025-11-12 21:18:07,161 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:18:07,162 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:07] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:18:07,301 - INFO - [LOAD] Arquivo carregado: pedidos.json (9 registros)
+2025-11-12 21:18:07,302 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:07] "GET /api/read/pedidos.json HTTP/1.1" 200 -
+2025-11-12 21:18:09,522 - INFO - [LOAD] Arquivo carregado: pedidos.json (9 registros)
+2025-11-12 21:18:09,524 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:09] "GET /api/read/pedidos.json HTTP/1.1" 200 -
+2025-11-12 21:18:14,596 - INFO - [LOAD] Arquivo carregado: pedidos.json (9 registros)
+2025-11-12 21:18:14,598 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:14] "GET /api/read/pedidos.json HTTP/1.1" 200 -
+2025-11-12 21:18:14,642 - INFO - [LOAD] Arquivo carregado: alunos.json (5 registros)
+2025-11-12 21:18:14,643 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:14] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:18:43,329 - INFO - [LOAD] Arquivo carregado: pedidos.json (9 registros)
+2025-11-12 21:18:43,331 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:43] "GET /api/read/pedidos.json HTTP/1.1" 200 -
+2025-11-12 21:18:43,375 - INFO - [LOAD] Arquivo carregado: alunos.json (5 registros)
+2025-11-12 21:18:43,376 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:43] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:18:53,623 - INFO - [LOAD] Arquivo carregado: alunos.json (5 registros)
+2025-11-12 21:18:53,625 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:53] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:18:53,684 - INFO - [LOAD] Arquivo carregado: alunos.json (5 registros)
+2025-11-12 21:18:53,686 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:53] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:18:53,747 - INFO - [LOAD] Arquivo carregado: professores.json (3 registros)
+2025-11-12 21:18:53,748 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:53] "GET /api/read/professores.json HTTP/1.1" 200 -
+2025-11-12 21:18:53,808 - INFO - [LOAD] Arquivo carregado: admin.json (1 registros)
+2025-11-12 21:18:53,810 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:53] "GET /api/read/admin.json HTTP/1.1" 200 -
+2025-11-12 21:18:55,993 - INFO - [PROC] Processando: write em alunos.json
+2025-11-12 21:18:55,999 - INFO - [SAVE] Arquivo salvo: alunos.json (6 registros)
+2025-11-12 21:18:55,999 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:55] "POST /api/write/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:18:56,056 - INFO - [LOAD] Arquivo carregado: pedidos.json (9 registros)
+2025-11-12 21:18:56,057 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:56] "GET /api/read/pedidos.json HTTP/1.1" 200 -
+2025-11-12 21:18:56,100 - INFO - [PROC] Processando: write em pedidos.json
+2025-11-12 21:18:56,102 - INFO - [SAVE] Arquivo salvo: pedidos.json (9 registros)
+2025-11-12 21:18:56,102 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:56] "POST /api/write/pedidos.json HTTP/1.1" 200 -
+2025-11-12 21:18:56,164 - INFO - [LOAD] Arquivo carregado: pedidos.json (9 registros)
+2025-11-12 21:18:56,165 - INFO - 192.168.0.85 - - [12/Nov/2025 21:18:56] "GET /api/read/pedidos.json HTTP/1.1" 200 -
+2025-11-12 21:20:34,353 - INFO - [LOAD] Arquivo carregado: alunos.json (6 registros)
+2025-11-12 21:20:34,355 - INFO - 192.168.0.85 - - [12/Nov/2025 21:20:34] "GET /api/read/alunos.json HTTP/1.1" 200 -
+2025-11-12 21:20:34,400 - INFO - [LOAD] Arquivo carregado: professores.json (3 registros)
+2025-11-12 21:20:34,401 - INFO - 192.168.0.85 - - [12/Nov/2025 21:20:34] "GET /api/read/professores.json HTTP/1.1" 200 -
+2025-11-12 21:20:34,460 - INFO - [LOAD] Arquivo carregado: admin.json (1 registros)
+2025-11-12 21:20:34,461 - INFO - 192.168.0.85 - - [12/Nov/2025 21:20:34] "GET /api/read/admin.json HTTP/1.1" 200 -
+2025-11-12 21:20:34,599 - INFO - [LOAD] Arquivo carregado: professores.json (3 registros)
+2025-11-12 21:20:34,600 - INFO - 192.168.0.85 - - [12/Nov/2025 21:20:34] "GET /api/read/professores.json HTTP/1.1" 200 -
+2025-11-12 21:20:34,675 - INFO - [LOAD] Arquivo carregado: professores.json (3 registros)
+2025-11-12 21:20:34,676 - INFO - 192.168.0.85 - - [12/Nov/2025 21:20:34] "GET /api/read/professores.json HTTP/1.1" 200 -
+2025-11-12 21:20:34,736 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:20:34,737 - INFO - 192.168.0.85 - - [12/Nov/2025 21:20:34] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:20:34,798 - INFO - [LOAD] Arquivo carregado: materias.json (19 registros)
+2025-11-12 21:20:34,799 - INFO - 192.168.0.85 - - [12/Nov/2025 21:20:34] "GET /api/read/materias.json HTTP/1.1" 200 -
+2025-11-12 21:20:34,843 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:20:34,845 - INFO - 192.168.0.85 - - [12/Nov/2025 21:20:34] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:20:34,905 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:20:34,906 - INFO - 192.168.0.85 - - [12/Nov/2025 21:20:34] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:20:34,998 - INFO - [LOAD] Arquivo carregado: turmas.json (2 registros)
+2025-11-12 21:20:34,999 - INFO - 192.168.0.85 - - [12/Nov/2025 21:20:34] "GET /api/read/turmas.json HTTP/1.1" 200 -
+2025-11-12 21:20:57,667 - INFO - [LOAD] Arquivo carregado: registros_aula.json (4 registros)
+2025-11-12 21:20:57,669 - INFO - 192.168.0.85 - - [12/Nov/2025 21:20:57] "GET /api/read/registros_aula.json HTTP/1.1" 200 -
+2025-11-12 21:20:59,429 - INFO - [LOAD] Arquivo carregado: registros_aula.json (4 registros)
+2025-11-12 21:20:59,430 - INFO - 192.168.0.85 - - [12/Nov/2025 21:20:59] "GET /api/read/registros_aula.json HTTP/1.1" 200 -
+2025-11-12 21:22:28,927 - INFO - 192.168.0.83 - - [12/Nov/2025 21:22:28] "GET /ping HTTP/1.1" 200 -
+2025-11-12 21:22:50,989 - INFO - 192.168.0.83 - - [12/Nov/2025 21:22:50] "GET /ping HTTP/1.1" 200 -
+2025-11-12 21:30:54,529 - INFO - [DIR] Diretório de dados configurado: C:\Users\Assupero\Desktop\PIM-2-Bimestre-PED-BEGH-main\PIM 2.2025\PIM\Server\conexao\maq1\DATA
+2025-11-12 21:30:54,530 - INFO - [WORKER] Worker thread iniciado
+2025-11-12 21:30:54,543 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5555
+ * Running on http://192.168.0.84:5555
+2025-11-12 21:30:54,543 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-12 21:47:06,736 - INFO - [DIR] Diretório de dados configurado: C:\Users\Assupero\Desktop\PIM-2-Bimestre-PED-BEGH-main\PIM 2.2025\PIM\Server\conexao\maq1\DATA
+2025-11-12 21:47:06,738 - INFO - [WORKER] Worker thread iniciado
+2025-11-12 21:47:06,763 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5555
+ * Running on http://192.168.0.84:5555
+2025-11-12 21:47:06,763 - INFO - [33mPress CTRL+C to quit[0m

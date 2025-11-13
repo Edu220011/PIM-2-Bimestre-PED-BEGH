@@ -1,0 +1,139 @@
+[
+  {
+    "aluno_ra": null,
+    "data": "08/09/2025 12:24",
+    "descricao": "Nome: Toninho Ramos\nData de Nascimento: 09/08/2007\nNome da Mãe: Aaaaaaaaaaaaaa\nTelefone: 199999999\nEmail: aaaaaaaaaaaaaa\nSérie Desejada: 1ª Série\n\nInformações Adicionais:\naaaaaaaaaaaa",
+    "id": 1,
+    "solicitante_email": "aaaaaaaaaaaaaa",
+    "solicitante_nome": "Toninho Ramos",
+    "solicitante_telefone": "199999999",
+    "status": "Aprovado",
+    "tipo": "Matrícula"
+  },
+  {
+    "aluno_ra": null,
+    "data": "09/09/2025 12:02",
+    "descricao": "Nome: Eduardo Antonio de Almeida Oliveira\nData de Nascimento: 01/01/2001\nNome da Mãe: Roberta Carlas Silva\nTelefone: (19)999595231\nEmail: dudu.almeidakcond@gmail.com\nSérie Desejada: 1ª Série\n\nInformações Adicionais:\n",
+    "id": 2,
+    "solicitante_email": "dudu.almeidakcond@gmail.com",
+    "solicitante_nome": "Eduardo Antonio de Almeida Oliveira",
+    "solicitante_telefone": "(19)999595231",
+    "status": "Aprovado",
+    "tipo": "Matrícula"
+  },
+  {
+    "aluno_ra": null,
+    "data": "16/09/2025 21:20",
+    "descricao": "Nome: aaaaaaaaaaaaaaaaaaaaaa\nData de Nascimento: 19/03/2000\nNome da Mãe: aaaaaaaaaaaaaaaaaaa\nTelefone: (19)99999999\nEmail: aaaaaaaaaaaaaaaaaaaaaaaaaa@gmail.com\nSérie Desejada: 1ª Série\n\nInformações Adicionais:\naaaaaaaaaaaaaaaaaaaaaa",
+    "id": 3,
+    "solicitante_email": "aaaaaaaaaaaaaaaaaaaaaaaaaa@gmail.com",
+    "solicitante_nome": "aaaaaaaaaaaaaaaaaaaaaa",
+    "solicitante_telefone": "(19)99999999",
+    "status": "Recusado",
+    "tipo": "Matrícula"
+  },
+  {
+    "aluno_ra": null,
+    "dados_aluno": {
+      "cpf": "123.456.789.00",
+      "data_nascimento": "09/02/2000",
+      "nome": "Eduardo Antonio",
+      "nome_mae": "Janaina Almeida"
+    },
+    "dados_responsavel": {
+      "cpf": "123.456.789-01",
+      "email": "dudu.almeidakcond@gmail.com",
+      "nome": "Janaina Almeida",
+      "relacao": "Mãe",
+      "telefone": "(35)3662 8922"
+    },
+    "data": "01/10/2025 12:56",
+    "descricao": "=== DADOS DO ALUNO ===\nNome do Aluno: Eduardo Antonio\nData de Nascimento: 09/02/2000\nCPF do Aluno: 123.456.789.00\nNome da Mãe: Janaina Almeida\n\n=== DADOS DO RESPONSÁVEL ===\nNome do Responsável: Janaina Almeida\nCPF do Responsável: 123.456.789-01\nRelação com o Aluno: Mãe\n\n=== DADOS PARA CONTATO ===\nTelefone: (35)3662 8922\nEmail: dudu.almeidakcond@gmail.com\n\n=== DADOS ESCOLARES ===\nSérie Desejada: 1ª Série\n\n=== INFORMAÇÕES ADICIONAIS ===\nNenhuma informação adicional fornecida.",
+    "id": 4,
+    "informacoes_adicionais": "",
+    "serie_desejada": "1ª Série",
+    "solicitante_email": "dudu.almeidakcond@gmail.com",
+    "solicitante_nome": "Janaina Almeida",
+    "solicitante_telefone": "(35)3662 8922",
+    "status": "Recusado",
+    "tipo": "Matrícula"
+  },
+  {
+    "aluno_ra": null,
+    "dados_aluno": {
+      "cpf": "987.654.321-00",
+      "data_nascimento": "15/03/2010",
+      "nome": "Maria Silva Santos",
+      "nome_mae": "Ana Carolina Silva"
+    },
+    "dados_responsavel": {
+      "cpf": "123.987.654-21",
+      "email": "joao.santos@email.com",
+      "nome": "João Pedro Santos",
+      "relacao": "Pai",
+      "telefone": "(11) 98765-4321"
+    },
+    "data": "02/10/2025 14:30",
+    "descricao": "=== DADOS DO ALUNO ===\nNome do Aluno: Maria Silva Santos\nData de Nascimento: 15/03/2010\nCPF do Aluno: 987.654.321-00\nNome da Mãe: Ana Carolina Silva\n\n=== DADOS DO RESPONSÁVEL ===\nNome do Responsável: João Pedro Santos\nCPF do Responsável: 123.987.654-21\nRelação com o Aluno: Pai\n\n=== DADOS PARA CONTATO ===\nTelefone: (11) 98765-4321\nEmail: joao.santos@email.com\n\n=== ENDEREÇO ===\nLogradouro: Rua das Palmeiras\nNúmero: 150\nBairro: Jardim das Flores\nCidade: São Paulo\nCEP: 01234-567\nEstado: SP - São Paulo\n\n=== DADOS ESCOLARES ===\nSérie Desejada: 5ª Série\n\n=== INFORMAÇÕES ADICIONAIS ===\nAluna transferida de escola particular. Possui ótimo rendimento acadêmico.",
+    "endereco": {
+      "bairro": "Jardim das Flores",
+      "cep": "01234-567",
+      "cidade": "São Paulo",
+      "estado": "SP - São Paulo",
+      "logradouro": "Rua das Palmeiras",
+      "numero": "150"
+    },
+    "id": 5,
+    "informacoes_adicionais": "Aluna transferida de escola particular. Possui ótimo rendimento acadêmico.",
+    "serie_desejada": "5ª Série",
+    "solicitante_email": "joao.santos@email.com",
+    "solicitante_nome": "João Pedro Santos",
+    "solicitante_telefone": "(11) 98765-4321",
+    "status": "Recusado",
+    "tipo": "Matrícula"
+  },
+  {
+    "Data de Nascimento": "19/03/2000",
+    "Nome": "Antonio Eduardo",
+    "aluno_ra": null,
+    "data": "08/10/2025 19:58",
+    "descricao": "=== SOLICITAÇÃO DE MATRÍCULA ===\n\nNome do Aluno: Antonio Eduardo\nData de Nascimento: 19/03/2000",
+    "id": 6,
+    "solicitante_nome": "Antonio Eduardo",
+    "status": "Aprovado",
+    "tipo": "Matrícula"
+  },
+  {
+    "Data de Nascimento": "19/03/2003",
+    "Nome": "Teste 3",
+    "aluno_ra": null,
+    "data": "08/10/2025 20:03",
+    "descricao": "=== SOLICITAÇÃO DE MATRÍCULA ===\n\nNome do Aluno: Teste 3\nData de Nascimento: 19/03/2003",
+    "id": 7,
+    "solicitante_nome": "Teste 3",
+    "status": "Aprovado",
+    "tipo": "Matrícula"
+  },
+  {
+    "Data de Nascimento": "19/03/2008",
+    "Nome": "a",
+    "aluno_ra": null,
+    "data": "14/10/2025 12:12",
+    "descricao": "=== SOLICITAÇÃO DE MATRÍCULA ===\n\nNome do Aluno: a\nData de Nascimento: 19/03/2008",
+    "id": 8,
+    "solicitante_nome": "a",
+    "status": "Pendente",
+    "tipo": "Matrícula"
+  },
+  {
+    "id": 9,
+    "data": "12/11/2025 21:15",
+    "tipo": "Matrícula",
+    "status": "Pendente",
+    "descricao": "=== SOLICITAÇÃO DE MATRÍCULA ===\n\nNome do Aluno: Teste Teste\nData de Nascimento: 19/09/2000",
+    "aluno_ra": null,
+    "solicitante_nome": "Teste Teste",
+    "Nome": "Teste Teste",
+    "Data de Nascimento": "19/09/2000"
+  }
+]
